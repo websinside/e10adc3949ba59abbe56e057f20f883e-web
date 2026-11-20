@@ -1,181 +1,478 @@
 <!doctype html>
 <html lang="es-CL">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>nathycostura.cl | Uniformes San Ignacio · Calera de Tango</title>
-  <meta name="description" content="Uniformes del Colegio San Ignacio de Calera de Tango, confeccionados a medida y también en tallas grandes. Buzos, poleras, polerones y jockey. Cotiza por WhatsApp.">
-  <meta name="theme-color" content="#15263e">
-  <meta property="og:title" content="nathycostura.cl · Hecho a tu medida">
-  <meta property="og:description" content="Uniformes escolares, confecciones y arreglos. Más de 20 años de experiencia en cada puntada.">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/uniformes-nathy.png" as="image" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-paper focus:p-4">Ir al contenido</a>
-  <aside aria-label="Información de entregas y envíos" class="bg-navy text-paper py-3 px-4 text-center text-sm leading-relaxed">
-    <p class="mx-auto max-w-7xl"><strong class="font-semibold">Entregas directas:</strong> Santiago, San Bernardo, Calera de Tango, Talagante e Isla de Maipo <span class="text-gold px-1" aria-hidden="true">·</span> <strong class="font-semibold">Regiones:</strong> envíos por Starken <span class="text-gold px-1" aria-hidden="true">·</span> <strong class="text-gold font-semibold">El envío se paga aparte.</strong></p>
-  </aside>
-  <header class="wrap pt-6">
-    <div class="relative flex items-center justify-center pb-5">
-      <span class="hidden lg:block absolute left-0 text-sm text-muted">Confección & arreglos</span>
-      <a href="#" aria-label="nathycostura.cl, inicio" class="text-center leading-none">
-        <span class="font-display text-[1.75rem] sm:text-[2.6rem] font-medium tracking-tight">nathycostura<span class="text-gold-dark">.cl</span></span>
-        <span class="block text-[.75rem] tracking-[.16em] mt-3 uppercase">Confecciones a medida</span>
-      </a>
-      <a href="https://wa.me/56994767883" target="_blank" rel="noopener noreferrer" class="hidden lg:inline-flex absolute right-0 nav-link gap-2"><span class="text-gold-dark">✆</span> +56 9 9476 7883</a>
-    </div>
-    <nav aria-label="Navegación principal" class="flex flex-wrap justify-center gap-x-5 sm:gap-x-10 border-y border-rule py-1">
-      <a class="nav-link" href="#uniformes">Uniformes escolares</a>
-      <a class="nav-link" href="#a-medida">A tu medida</a>
-      <a class="nav-link" href="#servicios">Otros servicios</a>
-      <button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="nav-link" >Hablemos</button>
-    </nav>
-  </header>
-  <main id="contenido">
-    <section class="wrap grid lg:grid-cols-[1.08fr_1fr] gap-10 lg:gap-16 items-center py-10 lg:py-14" aria-labelledby="hero-title">
-      <div class="py-3 lg:py-8">
-        <p class="text-sm text-muted mb-6 flex items-center gap-3"><span class="w-8 border-t border-gold-dark" aria-hidden="true"></span> Colegio San Ignacio · Calera de Tango</p>
-        <h1 id="hero-title" class="text-[2.7rem] sm:text-[3.8rem] xl:text-[4.4rem] max-w-[13ch]">Uniformes que se adaptan a ti.</h1>
-        <p class="text-muted mt-6 max-w-[43ch] text-base sm:text-lg">Confeccionamos uniformes para estudiantes del Colegio San Ignacio de Calera de Tango. Buzos, poleras, polerones y gorros hechos a tu medida, también en tallas grandes.</p>
-        <div class="flex flex-wrap gap-3 mt-8">
-          <button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="btn btn-primary" >Cotizar mi uniforme</button>
-          <a class="btn btn-outline" href="#uniformes">Ver confecciones</a>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>nathycostura.cl | Costura a Medida y Uniformes Escolares en Calera de Tango</title>
+    <meta name="description"
+      content="Taller de costura en Calera de Tango con más de 20 años de experiencia. Uniformes del Colegio San Ignacio a medida y en tallas grandes, arreglos de ropa, bastas, cortinas, manteles y bolsos a pedido. Cotiza por WhatsApp.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://nathycostura.cl/">
+    <meta name="geo.region" content="CL-RM">
+    <meta name="geo.placename" content="Calera de Tango">
+    <meta name="theme-color" content="#15263e">
+    <meta property="og:site_name" content="nathycostura.cl">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:url" content="https://nathycostura.cl/">
+    <meta property="og:title" content="nathycostura.cl · Costura a Medida y Uniformes en Calera de Tango">
+    <meta property="og:description"
+      content="Uniformes del Colegio San Ignacio de Calera de Tango a medida y tallas grandes, arreglos de ropa, cortinas, manteles y bolsos. Más de 20 años de experiencia.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://nathycostura.cl/assets/uniformes-nathy-chica.png">
+    <meta property="og:image:alt" content="Catálogo de uniformes escolares del Colegio San Ignacio de Calera de Tango confeccionados por nathycostura.cl">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="nathycostura.cl · Costura y Uniformes en Calera de Tango">
+    <meta name="twitter:description" content="Uniformes escolares a medida y tallas grandes, arreglos de ropa y confecciones para el hogar en Calera de Tango.">
+    <meta name="twitter:image" content="https://nathycostura.cl/assets/uniformes-nathy-chica.png">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="assets/uniformes-nathy-chica.png" as="image" fetchpriority="high">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://nathycostura.cl/#website",
+        "url": "https://nathycostura.cl/",
+        "name": "nathycostura.cl",
+        "inLanguage": "es-CL"
+      },
+      {
+        "@type": ["LocalBusiness", "ClothingStore"],
+        "@id": "https://nathycostura.cl/#business",
+        "additionalType": "https://schema.org/Tailor",
+        "name": "Nathy Confecciones · nathycostura.cl",
+        "url": "https://nathycostura.cl/",
+        "image": "https://nathycostura.cl/assets/uniformes-nathy.png",
+        "telephone": "+56994767883",
+        "description": "Taller de costura y confecciones a medida en Calera de Tango con más de 20 años de experiencia. Uniformes del Colegio San Ignacio en tallas estándar y tallas grandes, bolsos a pedido, manteles, cortinas y arreglos de ropa.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Calera de Tango",
+          "addressRegion": "Región Metropolitana",
+          "addressCountry": "CL"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Calera de Tango" },
+          { "@type": "City", "name": "San Bernardo" },
+          { "@type": "City", "name": "Talagante" },
+          { "@type": "City", "name": "Isla de Maipo" },
+          { "@type": "City", "name": "Santiago" },
+          { "@type": "Country", "name": "Chile" }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+56994767883",
+          "contactType": "customer service",
+          "availableLanguage": "Spanish",
+          "areaServed": "CL"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Confecciones y servicios de costura en Calera de Tango",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Buzo completo Colegio San Ignacio de Calera de Tango",
+                "description": "Buzo escolar completo confeccionado a medida y en tallas grandes para estudiantes del Colegio San Ignacio de Calera de Tango.",
+                "image": "https://nathycostura.cl/assets/uniformes-nathy.png"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Polera blanca Colegio San Ignacio de Calera de Tango",
+                "description": "Polera escolar blanca con cuello y detalles rojos y azul marino, confeccionada a medida."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Polera deportiva Colegio San Ignacio de Calera de Tango",
+                "description": "Polera de educación física negra con detalles rojos y amarillos, confeccionada a medida."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Polerón con capucha Colegio San Ignacio de Calera de Tango",
+                "description": "Polerón escolar azul marino con capucha y bolsillo delantero, disponible a medida y en tallas grandes."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Jockey escolar Colegio San Ignacio de Calera de Tango",
+                "description": "Jockey escolar azul marino del uniforme del Colegio San Ignacio de Calera de Tango."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Arreglos de ropa, bastas, ajustes y parches en Calera de Tango",
+                "description": "Bastas, ajustes de prendas, parches para pantalones rotos y arreglos generales de costura."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Confección de manteles, cortinas y bolsos a pedido",
+                "description": "Manteles y cortinas a medida para el hogar y bolsos confeccionados por encargo."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://nathycostura.cl/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Confeccionas uniformes en tallas grandes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Confeccionamos ropa escolar a medida, también para estudiantes de tallas grandes. Escríbenos para coordinar las medidas y el modelo que necesitas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo puedo hacer un pedido?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pulsa «Cotizar» o «Consultar» para preparar tu solicitud en el panel lateral y conversar por WhatsApp. Cuéntanos qué necesitas; si tienes una foto de referencia, puedes adjuntarla en la conversación."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta y cuánto demora?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El valor y el plazo dependen de la prenda, las medidas, los materiales y la cantidad. Consulta por WhatsApp para acordar estos detalles antes de confirmar tu pedido."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿También arreglas ropa que ya tengo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Hacemos bastas, ajustes, parches para pantalones rotos y arreglos generales. Envíanos una foto por WhatsApp y cuéntanos qué necesitas reparar."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  </head>
+
+  <body>
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-paper focus:p-4">Ir al contenido</a>
+    <aside aria-label="Información de entregas y envíos" class="bg-navy text-paper py-3 px-4 text-center text-sm leading-relaxed">
+      <p class="mx-auto max-w-7xl"><strong class="font-semibold">Entregas directas:</strong> Santiago, San Bernardo, Calera de Tango, Talagante e Isla de Maipo <span class="text-gold px-1"
+          aria-hidden="true">·</span> <strong class="font-semibold">Regiones:</strong> envíos por Starken <span class="text-gold px-1" aria-hidden="true">·</span> <strong
+          class="text-gold font-semibold">El envío se paga aparte.</strong></p>
+    </aside>
+    <header class="wrap pt-6">
+      <div class="relative flex items-center justify-center pb-5">
+        <span class="hidden lg:block absolute left-0 text-sm text-muted">Confección & arreglos</span>
+        <a href="#" aria-label="nathycostura.cl, inicio" class="text-center leading-none">
+          <span class="font-display text-[1.75rem] sm:text-[2.6rem] font-medium tracking-tight">nathycostura<span class="text-gold-dark">.cl</span></span>
+          <span class="block text-[.75rem] tracking-[.16em] mt-3 uppercase">Confecciones a medida</span>
+        </a>
+        <a href="https://wa.me/56994767883" target="_blank" rel="noopener noreferrer" class="hidden lg:inline-flex absolute right-0 nav-link gap-2"><span class="text-gold-dark">✆</span> +56 9 9476
+          7883</a>
+      </div>
+      <nav aria-label="Navegación principal" class="flex flex-wrap justify-center gap-x-5 sm:gap-x-10 border-y border-rule py-1">
+        <a class="nav-link" href="#uniformes">Uniformes escolares</a>
+        <a class="nav-link" href="#a-medida">A tu medida</a>
+        <a class="nav-link" href="#servicios">Otros servicios</a>
+        <button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="nav-link">Hablemos</button>
+      </nav>
+    </header>
+    <main id="contenido">
+      <section class="wrap grid lg:grid-cols-[1.08fr_1fr] gap-10 lg:gap-16 items-center py-10 lg:py-14" aria-labelledby="hero-title">
+        <div class="py-3 lg:py-8">
+          <p class="text-sm text-muted mb-6 flex items-center gap-3"><span class="w-8 border-t border-gold-dark" aria-hidden="true"></span> Colegio San Ignacio · Calera de Tango</p>
+          <h1 id="hero-title" class="text-[2.7rem] sm:text-[3.8rem] xl:text-[4.4rem] max-w-[13ch]">Uniformes que se adaptan a ti.</h1>
+          <p class="text-muted mt-6 max-w-[43ch] text-base sm:text-lg">Confeccionamos uniformes para estudiantes del Colegio San Ignacio de Calera de Tango. Buzos, poleras, polerones y gorros hechos a
+            tu medida, también en tallas grandes.</p>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="btn btn-primary">Cotizar mi uniforme</button>
+            <a class="btn btn-outline" href="#uniformes">Ver confecciones</a>
+          </div>
+          <div class="mt-10 pt-6 border-t border-rule flex items-center gap-4 max-w-[27rem]">
+            <span class="font-display text-5xl">20<span class="text-gold-dark">+</span></span>
+            <p class="text-sm text-muted max-w-[24ch]">años de experiencia en costuras de alta gama</p>
+          </div>
         </div>
-        <div class="mt-10 pt-6 border-t border-rule flex items-center gap-4 max-w-[27rem]">
-          <span class="font-display text-5xl">20<span class="text-gold-dark">+</span></span>
-          <p class="text-sm text-muted max-w-[24ch]">años de experiencia en costuras de alta gama</p>
+        <figure class="relative bg-cream mx-2 lg:mx-0">
+          <div class="absolute inset-3 stitch pointer-events-none z-10" aria-hidden="true"></div>
+          <svg viewBox="160 245 405 620" role="img" aria-label="Estudiante con el buzo del Colegio San Ignacio de Calera de Tango, confeccionado por nathycostura.cl" class="w-full aspect-[405/515] lg:aspect-[405/520]"
+            preserveAspectRatio="xMidYMin meet">
+            <defs>
+              <clipPath id="crop-1">
+                <rect x="160" y="245" width="405" height="590" />
+              </clipPath>
+            </defs>
+            <image clip-path="url(#crop-1)" href="assets/uniformes-nathy-chica.png" width="1076" height="1462" />
+          </svg>
+          <figcaption class="absolute bottom-7 left-0 right-0 flex justify-center"><span class="bg-paper px-5 py-3 text-sm border border-rule">Un buen comienzo, a tu medida.</span></figcaption>
+          <span class="absolute top-5 right-5 lg:-right-5 bg-navy text-paper w-24 h-24 rounded-full flex items-center justify-center text-center text-sm leading-snug p-3 rotate-6">Hecho<br>para
+            ti</span>
+        </figure>
+      </section>
+
+      <div class="bg-navy text-paper py-5">
+        <div class="wrap flex flex-wrap justify-center md:justify-between gap-x-7 gap-y-3 text-sm">
+          <p>Confección a medida</p><span class="text-gold hidden sm:block" aria-hidden="true">✦</span>
+          <p>Tallas grandes</p><span class="text-gold hidden sm:block" aria-hidden="true">✦</span>
+          <p>Terminaciones cuidadas</p><span class="text-gold hidden sm:block" aria-hidden="true">✦</span>
+          <p>Pedidos por WhatsApp</p>
         </div>
       </div>
-      <figure class="relative bg-cream mx-2 lg:mx-0">
-        <div class="absolute inset-3 stitch pointer-events-none z-10" aria-hidden="true"></div>
-        <svg viewBox="160 245 405 620" role="img" aria-label="Buzo escolar azul marino y rojo del catálogo de nathycostura.cl" class="w-full aspect-[405/515] lg:aspect-[405/520]" preserveAspectRatio="xMidYMin meet"><defs><clipPath id="crop-1"><rect x="160" y="245" width="405" height="590"/></clipPath></defs><image clip-path="url(#crop-1)" href="assets/uniformes-nathy.png" width="1076" height="1462" /></svg>
-        <figcaption class="absolute bottom-7 left-0 right-0 flex justify-center"><span class="bg-paper px-5 py-3 text-sm border border-rule">Un buen comienzo, a tu medida.</span></figcaption>
-        <span class="absolute top-5 right-5 lg:-right-5 bg-navy text-paper w-24 h-24 rounded-full flex items-center justify-center text-center text-sm leading-snug p-3 rotate-6">Hecho<br>para ti</span>
-      </figure>
-    </section>
 
-    <div class="bg-navy text-paper py-5">
-      <div class="wrap flex flex-wrap justify-center md:justify-between gap-x-7 gap-y-3 text-sm">
-        <p>Confección a medida</p><span class="text-gold hidden sm:block" aria-hidden="true">✦</span>
-        <p>Tallas grandes</p><span class="text-gold hidden sm:block" aria-hidden="true">✦</span>
-        <p>Terminaciones cuidadas</p><span class="text-gold hidden sm:block" aria-hidden="true">✦</span>
-        <p>Pedidos por WhatsApp</p>
-      </div>
-    </div>
+      <section id="uniformes" class="wrap py-16 lg:py-24" aria-labelledby="uniformes-title">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-9">
+          <div>
+            <h2 id="uniformes-title" class="text-4xl sm:text-5xl">Uniformes San Ignacio.</h2>
+            <p class="text-muted mt-4 max-w-[54ch]">El uniforme para acompañar cada jornada en el Colegio San Ignacio de Calera de Tango: desde las clases hasta educación física, con atención al calce
+              y las terminaciones.</p>
+          </div>
+          <a class="nav-link underline underline-offset-4 shrink-0" href="assets/uniformes-nathy-chica.png" target="_blank" rel="noopener">Ver afiche completo</a>
+        </div>
+        <div class="flex flex-wrap border-b border-rule gap-x-2 mb-8" role="group" aria-label="Filtrar confecciones">
+          <button type="button" class="filter" data-filter="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="filter" data-filter="buzos" aria-pressed="false">Buzos y polerones</button>
+          <button type="button" class="filter" data-filter="poleras" aria-pressed="false">Poleras</button>
+          <button type="button" class="filter" data-filter="gorros" aria-pressed="false">Gorros</button>
+        </div>
+        <p class="sr-only" id="filter-status" aria-live="polite"></p>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-8" id="products">
+          <article class="product min-w-0" data-category="buzos">
+            <button type="button" class="product-visual block" data-view-product="Buzo completo" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Buzo completo"><svg viewBox="145 340 920 630" role="img" aria-label="Chaqueta y pantalón del buzo del Colegio San Ignacio de Calera de Tango"><defs><clipPath id="crop-2"><rect x="145" y="340" width="920" height="630"/></clipPath></defs><image clip-path="url(#crop-2)" href="assets/buzo-san-ignacio.png" width="1254" height="1254"/></svg></button>
+            <h3 class="text-2xl mt-4"><button type="button" data-view-product="Buzo completo" aria-haspopup="dialog" aria-controls="product-dialog"
+                class="text-left hover:underline underline-offset-4">Buzo completo</button></h3>
+            <p class="text-sm text-muted mt-1">Comodidad para cada día</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false"
+              class="nav-link underline underline-offset-4 mt-2" data-product="Buzo completo">Consultar</button>
+          </article>
+          <article class="product min-w-0" data-category="poleras">
+            <button type="button" class="product-visual block" data-view-product="Polera blanca" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Polera blanca"><svg
+                viewBox="705 250 305 260" role="img" aria-label="Polera escolar blanca con cuello">
+                <defs>
+                  <clipPath id="crop-3">
+                    <rect x="705" y="250" width="305" height="250" />
+                  </clipPath>
+                </defs>
+                <image clip-path="url(#crop-3)" href="assets/uniformes-nathy.png" width="1076" height="1462" />
+              </svg></button>
+            <h3 class="text-2xl mt-4"><button type="button" data-view-product="Polera blanca" aria-haspopup="dialog" aria-controls="product-dialog"
+                class="text-left hover:underline underline-offset-4">Polera blanca</button></h3>
+            <p class="text-sm text-muted mt-1">Un básico del uniforme</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false"
+              class="nav-link underline underline-offset-4 mt-2" data-product="Polera blanca">Consultar</button>
+          </article>
+          <article class="product min-w-0" data-category="poleras">
+            <button type="button" class="product-visual block" data-view-product="Polera deportiva" aria-haspopup="dialog" aria-controls="product-dialog"
+              aria-label="Ver detalles de Polera deportiva"><svg viewBox="696 561 320 250" role="img" aria-label="Polera de educación física negra con detalles rojos y amarillos">
+                <defs>
+                  <clipPath id="crop-4">
+                    <rect x="696" y="561" width="320" height="250" />
+                  </clipPath>
+                </defs>
+                <image clip-path="url(#crop-4)" href="assets/uniformes-nathy.png" width="1076" height="1462" />
+              </svg></button>
+            <h3 class="text-2xl mt-4"><button type="button" data-view-product="Polera deportiva" aria-haspopup="dialog" aria-controls="product-dialog"
+                class="text-left hover:underline underline-offset-4">Polera deportiva</button></h3>
+            <p class="text-sm text-muted mt-1">Para moverse con libertad</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false"
+              class="nav-link underline underline-offset-4 mt-2" data-product="Polera deportiva">Consultar</button>
+          </article>
+          <article class="product min-w-0" data-category="buzos">
+            <button type="button" class="product-visual block" data-view-product="Polerón con capucha" aria-haspopup="dialog" aria-controls="product-dialog"
+              aria-label="Ver detalles de Polerón con capucha"><svg viewBox="396 885 300 285" role="img" aria-label="Polerón azul marino con capucha">
+                <defs>
+                  <clipPath id="crop-5">
+                    <rect x="396" y="885" width="300" height="285" />
+                  </clipPath>
+                </defs>
+                <image clip-path="url(#crop-5)" href="assets/uniformes-nathy.png" width="1076" height="1462" />
+              </svg></button>
+            <h3 class="text-2xl mt-4"><button type="button" data-view-product="Polerón con capucha" aria-haspopup="dialog" aria-controls="product-dialog"
+                class="text-left hover:underline underline-offset-4">Polerón con capucha</button></h3>
+            <p class="text-sm text-muted mt-1">Abrigo en azul marino</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false"
+              class="nav-link underline underline-offset-4 mt-2" data-product="Polerón con capucha">Consultar</button>
+          </article>
+          <article class="product min-w-0" data-category="gorros">
+            <button type="button" class="product-visual block" data-view-product="Jockey escolar" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Jockey escolar"><svg
+                viewBox="744 920 305 245" role="img" aria-label="Jockey escolar azul marino">
+                <defs>
+                  <clipPath id="crop-6">
+                    <rect x="744" y="920" width="305" height="245" />
+                  </clipPath>
+                </defs>
+                <image clip-path="url(#crop-6)" href="assets/uniformes-nathy.png" width="1076" height="1462" />
+              </svg></button>
+            <h3 class="text-2xl mt-4"><button type="button" data-view-product="Jockey escolar" aria-haspopup="dialog" aria-controls="product-dialog"
+                class="text-left hover:underline underline-offset-4">Jockey escolar</button></h3>
+            <p class="text-sm text-muted mt-1">El detalle que completa</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false"
+              class="nav-link underline underline-offset-4 mt-2" data-product="Jockey escolar">Consultar</button>
+          </article>
+        </div>
+        <p class="text-sm text-muted mt-8">Catálogo de confecciones para el Colegio San Ignacio de Calera de Tango. Consulta por el modelo, las medidas y los detalles de tu pedido.</p>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 mt-4" aria-label="Afiches del catálogo"><a class="nav-link underline underline-offset-4" href="assets/uniformes-nathy-chica.png" target="_blank" rel="noopener noreferrer">Catálogo con modelo</a><a class="nav-link underline underline-offset-4" href="assets/buzo-san-ignacio.png" target="_blank" rel="noopener noreferrer">Afiche del buzo completo</a><a class="nav-link underline underline-offset-4" href="assets/coleccion-escolar.png" target="_blank" rel="noopener noreferrer">Colección escolar</a></div>
+      </section>
 
-    <section id="uniformes" class="wrap py-16 lg:py-24" aria-labelledby="uniformes-title">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-9">
-        <div><h2 id="uniformes-title" class="text-4xl sm:text-5xl">Uniformes San Ignacio.</h2><p class="text-muted mt-4 max-w-[54ch]">El uniforme para acompañar cada jornada en el Colegio San Ignacio de Calera de Tango: desde las clases hasta educación física, con atención al calce y las terminaciones.</p></div>
-        <a class="nav-link underline underline-offset-4 shrink-0" href="assets/uniformes-nathy.png" target="_blank" rel="noopener">Ver afiche completo</a>
-      </div>
-      <div class="flex flex-wrap border-b border-rule gap-x-2 mb-8" role="group" aria-label="Filtrar confecciones">
-        <button type="button" class="filter" data-filter="todos" aria-pressed="true">Todos</button>
-        <button type="button" class="filter" data-filter="buzos" aria-pressed="false">Buzos y polerones</button>
-        <button type="button" class="filter" data-filter="poleras" aria-pressed="false">Poleras</button>
-        <button type="button" class="filter" data-filter="gorros" aria-pressed="false">Gorros</button>
-      </div>
-      <p class="sr-only" id="filter-status" aria-live="polite"></p>
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-8" id="products">
-        <article class="product min-w-0" data-category="buzos">
-          <button type="button" class="product-visual block" data-view-product="Buzo completo" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Buzo completo"><svg viewBox="187 245 302 615" role="img" aria-label="Buzo completo escolar azul marino y rojo"><defs><clipPath id="crop-2"><rect x="187" y="245" width="302" height="590"/></clipPath></defs><image clip-path="url(#crop-2)" href="assets/uniformes-nathy.png" width="1076" height="1462"/></svg></button>
-          <h3 class="text-2xl mt-4"><button type="button" data-view-product="Buzo completo" aria-haspopup="dialog" aria-controls="product-dialog" class="text-left hover:underline underline-offset-4">Buzo completo</button></h3><p class="text-sm text-muted mt-1">Comodidad para cada día</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="nav-link underline underline-offset-4 mt-2" data-product="Buzo completo" >Consultar</button>
-        </article>
-        <article class="product min-w-0" data-category="poleras">
-          <button type="button" class="product-visual block" data-view-product="Polera blanca" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Polera blanca"><svg viewBox="705 250 305 260" role="img" aria-label="Polera escolar blanca con cuello"><defs><clipPath id="crop-3"><rect x="705" y="250" width="305" height="250"/></clipPath></defs><image clip-path="url(#crop-3)" href="assets/uniformes-nathy.png" width="1076" height="1462"/></svg></button>
-          <h3 class="text-2xl mt-4"><button type="button" data-view-product="Polera blanca" aria-haspopup="dialog" aria-controls="product-dialog" class="text-left hover:underline underline-offset-4">Polera blanca</button></h3><p class="text-sm text-muted mt-1">Un básico del uniforme</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="nav-link underline underline-offset-4 mt-2" data-product="Polera blanca" >Consultar</button>
-        </article>
-        <article class="product min-w-0" data-category="poleras">
-          <button type="button" class="product-visual block" data-view-product="Polera deportiva" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Polera deportiva"><svg viewBox="696 561 320 250" role="img" aria-label="Polera de educación física negra con detalles rojos y amarillos"><defs><clipPath id="crop-4"><rect x="696" y="561" width="320" height="250"/></clipPath></defs><image clip-path="url(#crop-4)" href="assets/uniformes-nathy.png" width="1076" height="1462"/></svg></button>
-          <h3 class="text-2xl mt-4"><button type="button" data-view-product="Polera deportiva" aria-haspopup="dialog" aria-controls="product-dialog" class="text-left hover:underline underline-offset-4">Polera deportiva</button></h3><p class="text-sm text-muted mt-1">Para moverse con libertad</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="nav-link underline underline-offset-4 mt-2" data-product="Polera deportiva" >Consultar</button>
-        </article>
-        <article class="product min-w-0" data-category="buzos">
-          <button type="button" class="product-visual block" data-view-product="Polerón con capucha" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Polerón con capucha"><svg viewBox="396 885 300 285" role="img" aria-label="Polerón azul marino con capucha"><defs><clipPath id="crop-5"><rect x="396" y="885" width="300" height="285"/></clipPath></defs><image clip-path="url(#crop-5)" href="assets/uniformes-nathy.png" width="1076" height="1462"/></svg></button>
-          <h3 class="text-2xl mt-4"><button type="button" data-view-product="Polerón con capucha" aria-haspopup="dialog" aria-controls="product-dialog" class="text-left hover:underline underline-offset-4">Polerón con capucha</button></h3><p class="text-sm text-muted mt-1">Abrigo en azul marino</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="nav-link underline underline-offset-4 mt-2" data-product="Polerón con capucha" >Consultar</button>
-        </article>
-        <article class="product min-w-0" data-category="gorros">
-          <button type="button" class="product-visual block" data-view-product="Jockey escolar" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Jockey escolar"><svg viewBox="744 920 305 245" role="img" aria-label="Jockey escolar azul marino"><defs><clipPath id="crop-6"><rect x="744" y="920" width="305" height="245"/></clipPath></defs><image clip-path="url(#crop-6)" href="assets/uniformes-nathy.png" width="1076" height="1462"/></svg></button>
-          <h3 class="text-2xl mt-4"><button type="button" data-view-product="Jockey escolar" aria-haspopup="dialog" aria-controls="product-dialog" class="text-left hover:underline underline-offset-4">Jockey escolar</button></h3><p class="text-sm text-muted mt-1">El detalle que completa</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="nav-link underline underline-offset-4 mt-2" data-product="Jockey escolar" >Consultar</button>
-        </article>
-      </div>
-      <p class="text-sm text-muted mt-8">Catálogo de confecciones para el Colegio San Ignacio de Calera de Tango. Consulta por el modelo, las medidas y los detalles de tu pedido.</p>
-    </section>
+      <section id="a-medida" class="bg-cream py-16 lg:py-20" aria-labelledby="medida-title">
+        <div class="wrap grid lg:grid-cols-[.9fr_1fr] gap-10 lg:gap-24 items-center">
+          <div class="bg-navy text-paper p-7 sm:p-12 relative">
+            <div class="absolute inset-3 stitch pointer-events-none" aria-hidden="true"></div>
+            <svg viewBox="0 0 360 190" class="w-full max-w-sm mx-auto text-gold" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+              <path d="M48 130 180 55l132 75c10 6 7 17-5 17H53c-12 0-15-11-5-17Z" />
+              <path d="M180 55V43c0-9 14-9 14-22 0-18-28-18-28 0" />
+              <path d="M53 160h254" stroke-dasharray="4 6" />
+            </svg>
+            <p class="font-display text-4xl sm:text-5xl leading-tight max-w-[13ch] mx-auto pb-5">Cada cuerpo tiene su propia medida.</p>
+            <p class="text-sm text-center mt-4">Y cada prenda, su dedicación.</p>
+          </div>
+          <div>
+            <h2 id="medida-title" class="text-4xl sm:text-5xl max-w-[17ch]">Tu uniforme, con tus medidas.</h2>
+            <p class="mt-6 text-muted">Si las tallas habituales no se ajustan a ti, confeccionamos tu ropa escolar a medida. Trabajamos también tallas grandes, con la misma atención en el calce y en
+              cada terminación.</p>
+            <p class="mt-4 text-muted">Cuéntanos qué prenda necesitas y de qué colegio es. Coordinamos contigo las medidas y los detalles de tu pedido.</p>
+            <button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="btn btn-outline mt-7">Quiero una prenda a medida</button>
+          </div>
+        </div>
+      </section>
 
-    <section id="a-medida" class="bg-cream py-16 lg:py-20" aria-labelledby="medida-title">
-      <div class="wrap grid lg:grid-cols-[.9fr_1fr] gap-10 lg:gap-24 items-center">
-        <div class="bg-navy text-paper p-7 sm:p-12 relative">
-          <div class="absolute inset-3 stitch pointer-events-none" aria-hidden="true"></div>
-          <svg viewBox="0 0 360 190" class="w-full max-w-sm mx-auto text-gold" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M48 130 180 55l132 75c10 6 7 17-5 17H53c-12 0-15-11-5-17Z"/><path d="M180 55V43c0-9 14-9 14-22 0-18-28-18-28 0"/><path d="M53 160h254" stroke-dasharray="4 6"/></svg>
-          <p class="font-display text-4xl sm:text-5xl leading-tight max-w-[13ch] mx-auto pb-5">Cada cuerpo tiene su propia medida.</p>
-          <p class="text-sm text-center mt-4">Y cada prenda, su dedicación.</p>
+      <section id="servicios" class="wrap py-16 lg:py-24 grid lg:grid-cols-[.8fr_1.2fr] gap-9 lg:gap-24" aria-labelledby="servicios-title">
+        <div>
+          <h2 id="servicios-title" class="text-4xl sm:text-5xl">El oficio de darle forma a tus ideas.</h2>
+          <p class="mt-5 text-muted">Más de 20 años en costuras de alta gama, dedicados a confeccionar, ajustar y cuidar los detalles de cada trabajo.</p><button type="button" data-open-quote
+            aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="nav-link underline underline-offset-4 mt-5">Cuéntame tu idea</button>
         </div>
         <div>
-          <h2 id="medida-title" class="text-4xl sm:text-5xl max-w-[17ch]">Tu uniforme, con tus medidas.</h2>
-          <p class="mt-6 text-muted">Si las tallas habituales no se ajustan a ti, confeccionamos tu ropa escolar a medida. Trabajamos también tallas grandes, con la misma atención en el calce y en cada terminación.</p>
-          <p class="mt-4 text-muted">Cuéntanos qué prenda necesitas y de qué colegio es. Coordinamos contigo las medidas y los detalles de tu pedido.</p>
-          <button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="btn btn-outline mt-7" >Quiero una prenda a medida</button>
+          <div class="border-t border-rule py-6 grid sm:grid-cols-[.8fr_1fr] gap-3">
+            <h3 class="text-3xl">Bolsos a pedido</h3>
+            <p class="text-muted">Bolsos confeccionados a medida y por encargo, según lo que necesitas.</p>
+          </div>
+          <div class="border-t border-rule py-6 grid sm:grid-cols-[.8fr_1fr] gap-3">
+            <h3 class="text-3xl">Para tu hogar</h3>
+            <p class="text-muted">Manteles y cortinas a medida para vestir tus espacios.</p>
+          </div>
+          <div class="border-t border-rule py-6 grid sm:grid-cols-[.8fr_1fr] gap-3">
+            <h3 class="text-3xl">Arreglos y ajustes</h3>
+            <p class="text-muted">Bastas, ajustes de prendas, parches para pantalones rotos y arreglos generales.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap pb-16 lg:pb-24 grid lg:grid-cols-[.8fr_1.2fr] gap-8 lg:gap-24" aria-labelledby="faq-title">
+        <h2 id="faq-title" class="text-4xl sm:text-5xl">Antes de dar<br class="hidden lg:block"> la primera puntada.</h2>
+        <div>
+          <details>
+            <summary>¿Confeccionas uniformes en tallas grandes?</summary>
+            <p>Sí. Confeccionamos ropa escolar a medida, también para estudiantes de tallas grandes. Escríbenos para coordinar las medidas y el modelo que necesitas.</p>
+          </details>
+          <details>
+            <summary>¿Cómo puedo hacer un pedido?</summary>
+            <p>Pulsa «Cotizar» o «Consultar» para preparar tu solicitud en el panel lateral y conversar por WhatsApp. Cuéntanos qué necesitas; si tienes una foto de referencia, puedes adjuntarla en la
+              conversación.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto cuesta y cuánto demora?</summary>
+            <p>El valor y el plazo dependen de la prenda, las medidas, los materiales y la cantidad. Consulta por WhatsApp para acordar estos detalles antes de confirmar tu pedido.</p>
+          </details>
+          <details>
+            <summary>¿También arreglas ropa que ya tengo?</summary>
+            <p>Sí. Hacemos bastas, ajustes, parches para pantalones rotos y arreglos generales. Envíanos una foto por WhatsApp y cuéntanos qué necesitas reparar.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="contacto" class="bg-navy text-paper py-16 lg:py-20" aria-labelledby="contacto-title">
+        <div class="wrap grid lg:grid-cols-[.9fr_1fr] gap-10 lg:gap-24 items-start">
+          <div>
+            <h2 id="contacto-title" class="text-4xl sm:text-6xl max-w-[14ch]">Conversemos sobre tu próxima prenda.</h2>
+            <p class="mt-6 max-w-[38ch]">Todo comienza con una idea y una buena conversación. Cuéntame qué necesitas confeccionar o arreglar.</p><a
+              class="font-display text-3xl sm:text-4xl inline-block mt-8 text-gold whitespace-nowrap" href="https://wa.me/56994767883" target="_blank" rel="noopener noreferrer">+56 9 9476 7883</a>
+            <p class="text-sm mt-2">Atención y pedidos por WhatsApp</p>
+          </div>
+          <div class="lg:self-center"><button type="button" class="btn btn-light" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false">Preparar mi
+              consulta</button>
+            <p class="text-sm mt-4">Cuéntanos lo que necesitas y conversemos por WhatsApp.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <dialog id="product-dialog" class="product-dialog" aria-labelledby="product-title">
+      <div class="flex items-center justify-between gap-4 mb-6">
+        <p class="text-sm text-muted">San Ignacio · Calera de Tango</p><button type="button" class="drawer-close" id="close-product" aria-label="Cerrar detalles del producto">×</button>
+      </div>
+      <div class="grid md:grid-cols-2 gap-7 md:gap-10 items-start">
+        <div>
+          <div class="zoom-stage" id="zoom-stage">
+            <div id="product-image" class="product-image"></div>
+          </div><button type="button" class="nav-link underline underline-offset-4 mt-3" id="toggle-zoom" aria-pressed="false">Ampliar imagen</button>
+          <p id="zoom-help" class="text-sm text-muted">Mira los detalles de la prenda.</p>
+        </div>
+        <div>
+          <h2 id="product-title" class="text-3xl sm:text-4xl"></h2>
+          <p id="product-description" class="text-muted mt-5"></p>
+          <h3 class="text-2xl mt-7">Tallas y confección</h3>
+          <ul class="mt-4 space-y-2">
+            <li>Para estudiantes del Colegio San Ignacio de Calera de Tango.</li>
+            <li>Confección a tu medida.</li>
+            <li>También para estudiantes de tallas grandes.</li>
+            <li>Coordinamos tus medidas y los detalles del uniforme por WhatsApp.</li>
+          </ul>
+          <p class="text-sm text-muted mt-5">El valor y el plazo se acuerdan según tu pedido.</p><button type="button" class="btn btn-primary w-full mt-7" id="quote-product">Cotizar este
+            producto</button>
         </div>
       </div>
-    </section>
-
-    <section id="servicios" class="wrap py-16 lg:py-24 grid lg:grid-cols-[.8fr_1.2fr] gap-9 lg:gap-24" aria-labelledby="servicios-title">
-      <div><h2 id="servicios-title" class="text-4xl sm:text-5xl">El oficio de darle forma a tus ideas.</h2><p class="mt-5 text-muted">Más de 20 años en costuras de alta gama, dedicados a confeccionar, ajustar y cuidar los detalles de cada trabajo.</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false"  class="nav-link underline underline-offset-4 mt-5">Cuéntame tu idea</button></div>
-      <div>
-        <div class="border-t border-rule py-6 grid sm:grid-cols-[.8fr_1fr] gap-3"><h3 class="text-3xl">Bolsos a pedido</h3><p class="text-muted">Bolsos confeccionados a medida y por encargo, según lo que necesitas.</p></div>
-        <div class="border-t border-rule py-6 grid sm:grid-cols-[.8fr_1fr] gap-3"><h3 class="text-3xl">Para tu hogar</h3><p class="text-muted">Manteles y cortinas a medida para vestir tus espacios.</p></div>
-        <div class="border-t border-rule py-6 grid sm:grid-cols-[.8fr_1fr] gap-3"><h3 class="text-3xl">Arreglos y ajustes</h3><p class="text-muted">Bastas, ajustes de prendas, parches para pantalones rotos y arreglos generales.</p></div>
+    </dialog>
+    <dialog id="quote-drawer" class="quote-drawer" aria-labelledby="drawer-title" aria-describedby="drawer-description">
+      <div class="flex items-start justify-between gap-5 border-b border-rule pb-6">
+        <div>
+          <p class="text-sm text-muted mb-2">nathycostura.cl</p>
+          <h2 id="drawer-title" class="text-3xl sm:text-4xl">Cotiza por WhatsApp.</h2>
+        </div>
+        <button type="button" id="close-drawer" class="drawer-close" aria-label="Cerrar solicitud"><span aria-hidden="true">×</span></button>
       </div>
-    </section>
+      <p id="drawer-description" class="text-muted mt-5">Conversa directamente con Nathy. Tu consulta ya está preparada.</p>
+      <p class="text-sm text-muted mt-7">Quiero consultar por</p>
+      <p id="selected-service" class="font-display text-2xl mt-2 mb-6">Uniforme escolar a medida</p>
+      <a id="whatsapp-link" class="btn btn-primary w-full" href="https://wa.me/56994767883" target="_blank" rel="noopener noreferrer" autofocus>Conversar por WhatsApp</a>
+      <p class="text-sm text-muted mt-3">No necesitas completar ningún dato.</p>
+      <details class="mt-7">
+        <summary>Agregar detalles (opcional)</summary>
+        <label class="form-label" for="message">¿Qué necesitas?</label>
+        <textarea class="form-field min-h-28 resize-y mb-5" id="message" maxlength="1800" placeholder="Colegio, talla o cantidad…"></textarea>
+      </details>
+      <p class="text-sm text-muted mt-7">Tú decides cuándo enviar el mensaje en WhatsApp.</p>
+    </dialog>
+    <a class="whatsapp-float" href="https://wa.me/56994767883?text=Hola%20Nathy%2C%20quisiera%20cotizar." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp directamente">
+      <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.1-4.9a8.5 8.5 0 1 1 16.4-3.6Z" />
+        <path d="M8 7.5c0 4.4 3.5 7.9 7.8 7.9l1-2.1-2.4-1.1-.9 1c-1.5-.6-2.7-1.8-3.3-3.3l1-.9-1.1-2.4L8 7.5Z" />
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+    <footer class="wrap flex flex-col sm:flex-row justify-between gap-3 py-7 text-sm">
+      <p>© <span id="year">2026</span> nathycostura.cl · Calera de Tango, RM</p>
+      <p>Con oficio. Con dedicación. A tu medida.</p><a class="whitespace-nowrap underline underline-offset-4" href="#">Volver al inicio</a>
+    </footer>
+  </body>
 
-    <section class="wrap pb-16 lg:pb-24 grid lg:grid-cols-[.8fr_1.2fr] gap-8 lg:gap-24" aria-labelledby="faq-title">
-      <h2 id="faq-title" class="text-4xl sm:text-5xl">Antes de dar<br class="hidden lg:block"> la primera puntada.</h2>
-      <div>
-        <details><summary>¿Confeccionas uniformes en tallas grandes?</summary><p>Sí. Confeccionamos ropa escolar a medida, también para estudiantes de tallas grandes. Escríbenos para coordinar las medidas y el modelo que necesitas.</p></details>
-        <details><summary>¿Cómo puedo hacer un pedido?</summary><p>Pulsa «Cotizar» o «Consultar» para preparar tu solicitud en el panel lateral y conversar por WhatsApp. Cuéntanos qué necesitas; si tienes una foto de referencia, puedes adjuntarla en la conversación.</p></details>
-        <details><summary>¿Cuánto cuesta y cuánto demora?</summary><p>El valor y el plazo dependen de la prenda, las medidas, los materiales y la cantidad. Consulta por WhatsApp para acordar estos detalles antes de confirmar tu pedido.</p></details>
-        <details><summary>¿También arreglas ropa que ya tengo?</summary><p>Sí. Hacemos bastas, ajustes, parches para pantalones rotos y arreglos generales. Envíanos una foto por WhatsApp y cuéntanos qué necesitas reparar.</p></details>
-      </div>
-    </section>
-
-    <section id="contacto" class="bg-navy text-paper py-16 lg:py-20" aria-labelledby="contacto-title">
-      <div class="wrap grid lg:grid-cols-[.9fr_1fr] gap-10 lg:gap-24 items-start">
-        <div><h2 id="contacto-title" class="text-4xl sm:text-6xl max-w-[14ch]">Conversemos sobre tu próxima prenda.</h2><p class="mt-6 max-w-[38ch]">Todo comienza con una idea y una buena conversación. Cuéntame qué necesitas confeccionar o arreglar.</p><a class="font-display text-3xl sm:text-4xl inline-block mt-8 text-gold whitespace-nowrap" href="https://wa.me/56994767883" target="_blank" rel="noopener noreferrer">+56 9 9476 7883</a><p class="text-sm mt-2">Atención y pedidos por WhatsApp</p></div>
-        <div class="lg:self-center"><button type="button" class="btn btn-light" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false">Preparar mi consulta</button><p class="text-sm mt-4">Cuéntanos lo que necesitas y conversemos por WhatsApp.</p></div>
-      </div>
-    </section>
-  </main>
-
-
-  <dialog id="product-dialog" class="product-dialog" aria-labelledby="product-title">
-    <div class="flex items-center justify-between gap-4 mb-6"><p class="text-sm text-muted">San Ignacio · Calera de Tango</p><button type="button" class="drawer-close" id="close-product" aria-label="Cerrar detalles del producto">×</button></div>
-    <div class="grid md:grid-cols-2 gap-7 md:gap-10 items-start">
-      <div><div class="zoom-stage" id="zoom-stage"><div id="product-image" class="product-image"></div></div><button type="button" class="nav-link underline underline-offset-4 mt-3" id="toggle-zoom" aria-pressed="false">Ampliar imagen</button><p id="zoom-help" class="text-sm text-muted">Mira los detalles de la prenda.</p></div>
-      <div><h2 id="product-title" class="text-3xl sm:text-4xl"></h2><p id="product-description" class="text-muted mt-5"></p><h3 class="text-2xl mt-7">Tallas y confección</h3><ul class="mt-4 space-y-2"><li>Para estudiantes del Colegio San Ignacio de Calera de Tango.</li><li>Confección a tu medida.</li><li>También para estudiantes de tallas grandes.</li><li>Coordinamos tus medidas y los detalles del uniforme por WhatsApp.</li></ul><p class="text-sm text-muted mt-5">El valor y el plazo se acuerdan según tu pedido.</p><button type="button" class="btn btn-primary w-full mt-7" id="quote-product">Cotizar este producto</button></div>
-    </div>
-  </dialog>
-  <dialog id="quote-drawer" class="quote-drawer" aria-labelledby="drawer-title" aria-describedby="drawer-description">
-    <div class="flex items-start justify-between gap-5 border-b border-rule pb-6">
-      <div><p class="text-sm text-muted mb-2">nathycostura.cl</p><h2 id="drawer-title" class="text-3xl sm:text-4xl">Cotiza por WhatsApp.</h2></div>
-      <button type="button" id="close-drawer" class="drawer-close" aria-label="Cerrar solicitud"><span aria-hidden="true">×</span></button>
-    </div>
-    <p id="drawer-description" class="text-muted mt-5">Conversa directamente con Nathy. Tu consulta ya está preparada.</p>
-    <p class="text-sm text-muted mt-7">Quiero consultar por</p>
-    <p id="selected-service" class="font-display text-2xl mt-2 mb-6">Uniforme escolar a medida</p>
-    <a id="whatsapp-link" class="btn btn-primary w-full" href="https://wa.me/56994767883" target="_blank" rel="noopener noreferrer" autofocus>Conversar por WhatsApp</a>
-    <p class="text-sm text-muted mt-3">No necesitas completar ningún dato.</p>
-    <details class="mt-7"><summary>Agregar detalles (opcional)</summary>
-      <label class="form-label" for="message">¿Qué necesitas?</label>
-      <textarea class="form-field min-h-28 resize-y mb-5" id="message" maxlength="1800" placeholder="Colegio, talla o cantidad…"></textarea>
-    </details>
-    <p class="text-sm text-muted mt-7">Tú decides cuándo enviar el mensaje en WhatsApp.</p>
-  </dialog>
-  <a class="whatsapp-float" href="https://wa.me/56994767883?text=Hola%20Nathy%2C%20quisiera%20cotizar." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp directamente">
-    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.1-4.9a8.5 8.5 0 1 1 16.4-3.6Z"/><path d="M8 7.5c0 4.4 3.5 7.9 7.8 7.9l1-2.1-2.4-1.1-.9 1c-1.5-.6-2.7-1.8-3.3-3.3l1-.9-1.1-2.4L8 7.5Z"/></svg>
-    <span>WhatsApp</span>
-  </a>
-  <footer class="wrap flex flex-col sm:flex-row justify-between gap-3 py-7 text-sm"><p>© <span id="year">2026</span> nathycostura.cl</p><p>Con oficio. Con dedicación. A tu medida.</p><a class="whitespace-nowrap underline underline-offset-4" href="#">Volver al inicio</a></footer>
-</body>
 </html>
