@@ -29,3 +29,5 @@ Las fichas de los uniformes del Colegio San Ignacio de Calera de Tango abren un 
 Las fotos de modelos y productos son archivos PNG independientes extraídos de los afiches originales. Para reproducirlos en Windows, ejecuta `./scripts/crop-catalog.ps1`. El carrusel de portada permite cambiar entre ambas fotos con flechas, indicadores, teclado o gesto táctil; las fichas usan las prendas recortadas.
 
 `assets/modelo-infantil.png` es una imagen ilustrativa generada a partir de la referencia del buzo. Se muestra primero en el carrusel y conserva las otras dos fotos.
+
+El carrusel utiliza `assets/modelo-infantil-pose-v2.png`, una variante con pose de tres cuartos y una mano en el bolsillo. Se conserva la imagen inicial.
