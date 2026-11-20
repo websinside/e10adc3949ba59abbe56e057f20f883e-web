@@ -9,33 +9,92 @@ filters.forEach(button => button.addEventListener('click', () => {
   });
   document.querySelector('#filter-status').textContent = `${count} confecciones en ${button.textContent}.`;
 }));
-document.querySelectorAll('[data-product]').forEach(link => link.addEventListener('click', () => {
-  document.querySelector('#service').value = link.dataset.product;
-}));
-const form = document.querySelector('#quote-form');
-const nameField = document.querySelector('#name');
-const help = document.querySelector('#name-help');
-function validateName() {
-  const valid = nameField.value.trim().length > 0;
-  nameField.setAttribute('aria-invalid', String(!valid));
-  help.textContent = valid ? '' : 'Escribe tu nombre para preparar la consulta.';
-  return valid;
+
+const drawer = document.querySelector('#quote-drawer');
+const triggers = [...document.querySelectorAll('[data-open-quote]')];
+let selectedService = 'Uniforme escolar a medida';
+const messageField = document.querySelector('#message');
+const whatsappLink = document.querySelector('#whatsapp-link');
+
+function updateRequest() {
+  const details = messageField.value.trim();
+  const message = 'Hola Nathy. Quisiera cotizar un uniforme del Colegio San Ignacio de Calera de Tango: ' + selectedService + '.' + (details ? '\n\n' + details : '');
+  document.querySelector('#selected-service').textContent = selectedService;
+  whatsappLink.href = 'https://wa.me/56994767883?text=' + encodeURIComponent(message);
 }
-nameField.addEventListener('blur', validateName);
-nameField.addEventListener('input', () => {
-  if (nameField.getAttribute('aria-invalid') === 'true') validateName();
+triggers.forEach(trigger => trigger.addEventListener('click', () => {
+  if (trigger.dataset.product) selectedService = trigger.dataset.product;
+  else selectedService = 'Uniforme escolar a medida';
+  updateRequest();
+  drawer.showModal();
+  document.documentElement.classList.add('drawer-open');
+  triggers.forEach(item => item.setAttribute('aria-expanded', 'true'));
+}));
+document.querySelector('#close-drawer').addEventListener('click', () => drawer.close());
+drawer.addEventListener('click', event => {
+  if (event.target !== drawer) return;
+  const rect = drawer.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) drawer.close();
 });
-form.addEventListener('submit', event => {
-  event.preventDefault();
-  if (!validateName()) { nameField.focus(); return; }
-  const service = document.querySelector('#service').value;
-  const details = document.querySelector('#message').value.trim();
-  const message = `Hola Nathy, soy ${nameField.value.trim()}. Quisiera consultar por: ${service}.${details ? `\n\n${details}` : ''}`;
-  const url = `https://wa.me/56994767883?text=${encodeURIComponent(message)}`;
-  const fallback = document.querySelector('#whatsapp-fallback');
-  fallback.href = url;
-  fallback.classList.remove('hidden');
-  document.querySelector('#form-status').textContent = 'Tu consulta está preparada. Si WhatsApp no se abre, usa el enlace de abajo.';
-  window.open(url, '_blank', 'noopener,noreferrer');
+drawer.addEventListener('close', () => {
+  document.documentElement.classList.remove('drawer-open');
+  triggers.forEach(item => item.setAttribute('aria-expanded', 'false'));
 });
+messageField.addEventListener('input', updateRequest);
+updateRequest();
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+const productDialog = document.querySelector('#product-dialog');
+const zoomStage = document.querySelector('#zoom-stage');
+const zoomButton = document.querySelector('#toggle-zoom');
+const productDescriptions = {
+  'Buzo completo': 'Buzo completo para estudiantes del Colegio San Ignacio de Calera de Tango. Chaqueta con cierre en azul marino, rojo y gris, junto a pantalón azul marino con detalles rojos, según el modelo del catálogo. Lo confeccionamos a medida para acompañar con comodidad la jornada escolar.',
+  'Polera blanca': 'Polera blanca del uniforme del Colegio San Ignacio de Calera de Tango, con cuello y detalles rojos y azul marino según el modelo del catálogo. Una prenda para el día a día escolar, confeccionada según las medidas de cada estudiante.',
+  'Polera deportiva': 'Polera de educación física para estudiantes del Colegio San Ignacio de Calera de Tango. Su diseño negro incorpora detalles rojos y amarillos en los hombros, según el catálogo. La confeccionamos a medida para que cada estudiante pueda moverse con comodidad.',
+  'Polerón con capucha': 'Polerón azul marino para complementar el uniforme del Colegio San Ignacio de Calera de Tango. El modelo del catálogo incluye capucha y bolsillo delantero. Confección a medida, también para estudiantes de tallas grandes.',
+  'Jockey escolar': 'Jockey azul marino para complementar el uniforme del Colegio San Ignacio de Calera de Tango, según el diseño del catálogo. Consulta por las medidas y los detalles de confección de tu pedido.'
+};
+let viewedProduct = '';
+function resetZoom() {
+  zoomStage.classList.remove('is-zoomed');
+  zoomButton.setAttribute('aria-pressed', 'false');
+  zoomButton.textContent = 'Ampliar imagen';
+  document.querySelector('#zoom-help').textContent = 'Mira los detalles de la prenda.';
+  zoomStage.scrollTop = 0;
+  zoomStage.scrollLeft = 0;
+}
+document.querySelectorAll('[data-view-product]').forEach(button => button.addEventListener('click', () => {
+  viewedProduct = button.dataset.viewProduct;
+  const image = button.closest('article').querySelector('.product-visual svg').cloneNode(true);
+  image.querySelectorAll('[id]').forEach(node => { const oldId = node.id; node.id = 'detail-' + oldId; image.querySelectorAll('[clip-path]').forEach(clipped => { if (clipped.getAttribute('clip-path') === 'url(#' + oldId + ')') clipped.setAttribute('clip-path', 'url(#detail-' + oldId + ')'); }); });
+  document.querySelector('#product-image').replaceChildren(image);
+  document.querySelector('#product-title').textContent = viewedProduct;
+  document.querySelector('#product-description').textContent = productDescriptions[viewedProduct];
+  resetZoom();
+  productDialog.showModal();
+  document.documentElement.classList.add('drawer-open');
+}));
+zoomButton.addEventListener('click', () => {
+  const zoomed = zoomStage.classList.toggle('is-zoomed');
+  zoomButton.setAttribute('aria-pressed', String(zoomed));
+  zoomButton.textContent = zoomed ? 'Ver imagen completa' : 'Ampliar imagen';
+  document.querySelector('#zoom-help').textContent = zoomed ? 'Desplaza la imagen para ver sus detalles.' : 'Mira los detalles de la prenda.';
+  if (!zoomed) { zoomStage.scrollTop = 0; zoomStage.scrollLeft = 0; }
+});
+document.querySelector('#close-product').addEventListener('click', () => productDialog.close());
+productDialog.addEventListener('click', event => {
+  if (event.target !== productDialog) return;
+  const rect = productDialog.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) productDialog.close();
+});
+productDialog.addEventListener('close', () => {
+  if (!drawer.open) document.documentElement.classList.remove('drawer-open');
+});
+document.querySelector('#quote-product').addEventListener('click', () => {
+  selectedService = viewedProduct;
+  updateRequest();
+  productDialog.close();
+  drawer.showModal();
+  document.documentElement.classList.add('drawer-open');
+  triggers.forEach(item => item.setAttribute('aria-expanded', 'true'));
+});
