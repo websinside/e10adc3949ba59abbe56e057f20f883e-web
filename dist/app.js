@@ -100,7 +100,7 @@ document.querySelector('#quote-product').addEventListener('click', () => {
 });
 
 
-// Two-image carousel with buttons, keyboard navigation and touch swipe.
+// Three-image carousel with buttons, keyboard navigation and touch swipe.
 const carousel = document.querySelector('#hero-carousel');
 const slideDots = [...document.querySelectorAll('[data-slide]')];
 let currentSlide = 0;
