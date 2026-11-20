@@ -99,12 +99,37 @@ document.querySelector('#quote-product').addEventListener('click', () => {
   triggers.forEach(item => item.setAttribute('aria-expanded', 'true'));
 });
 
-// Keep both supplied models available without automatic movement.
-const modelButtons = [...document.querySelectorAll('[data-model]')];
-modelButtons.forEach(button => button.addEventListener('click', () => {
-  const girl = button.dataset.model === 'chica';
-  document.querySelector('#hero-model-image').setAttribute('src', girl ? 'assets/modelo-chica.png' : 'assets/modelo-chico.png');
-  document.querySelector('#hero-model-image').setAttribute('alt', (girl ? 'Chica' : 'Chico') + ' con el buzo del Colegio San Ignacio de Calera de Tango, confeccionado por nathycostura.cl');
-  modelButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-  document.querySelector('#model-status').textContent = 'Mostrando uniforme en ' + button.dataset.model + '.';
-}));
+
+// Two-image carousel with buttons, keyboard navigation and touch swipe.
+const carousel = document.querySelector('#hero-carousel');
+const slideDots = [...document.querySelectorAll('[data-slide]')];
+let currentSlide = 0;
+function showSlide(index) {
+  currentSlide = (index + slideDots.length) % slideDots.length;
+  document.querySelector('#model-track').style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+  slideDots.forEach((dot, i) => dot.setAttribute('aria-pressed', String(i === currentSlide)));
+  document.querySelectorAll('.slide-photo').forEach((photo, i) => photo.setAttribute('aria-hidden', String(i !== currentSlide)));
+  document.querySelector('#model-status').textContent = 'Imagen ' + (currentSlide + 1) + ' de ' + slideDots.length + '.';
+}
+slideDots.forEach(dot => dot.addEventListener('click', () => showSlide(Number(dot.dataset.slide))));
+document.querySelector('#previous-slide').addEventListener('click', () => showSlide(currentSlide - 1));
+document.querySelector('#next-slide').addEventListener('click', () => showSlide(currentSlide + 1));
+carousel.addEventListener('keydown', event => {
+  if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+    event.preventDefault();
+    showSlide(currentSlide + (event.key === 'ArrowRight' ? 1 : -1));
+  }
+});
+let swipeStart;
+carousel.addEventListener('pointerdown', event => {
+  swipeStart = event.pointerType === 'touch' ? {x:event.clientX, y:event.clientY} : null;
+});
+carousel.addEventListener('pointerup', event => {
+  if (!swipeStart) return;
+  const dx = event.clientX - swipeStart.x;
+  const dy = event.clientY - swipeStart.y;
+  if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) showSlide(currentSlide + (dx < 0 ? 1 : -1));
+  swipeStart = null;
+});
+carousel.addEventListener('pointercancel', () => { swipeStart = null; });
+showSlide(0);

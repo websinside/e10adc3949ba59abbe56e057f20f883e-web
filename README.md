@@ -26,4 +26,4 @@ La carpeta pública es `dist`. `.openai/hosting.json` conserva la identidad de S
 
 Las fichas de los uniformes del Colegio San Ignacio de Calera de Tango abren un modal con descripción, confección a medida e imagen ampliable al 200 %. El botón flotante abre WhatsApp directamente; el panel lateral permite cotizar la prenda seleccionada sin datos obligatorios.
 
-Las fotos de modelos y productos son archivos PNG independientes extraídos de los afiches originales. Para reproducirlos en Windows, ejecuta `./scripts/crop-catalog.ps1`. El selector Chica/Chico cambia la foto de portada; las fichas usan las prendas recortadas.
+Las fotos de modelos y productos son archivos PNG independientes extraídos de los afiches originales. Para reproducirlos en Windows, ejecuta `./scripts/crop-catalog.ps1`. El carrusel de portada permite cambiar entre ambas fotos con flechas, indicadores, teclado o gesto táctil; las fichas usan las prendas recortadas.
