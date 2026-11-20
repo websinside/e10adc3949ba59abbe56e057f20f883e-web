@@ -1,0 +1,11 @@
+{
+  "name": "nathy-confecciones",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
+    "dev": "node scripts/serve.mjs",
+    "watch": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch"
+  },
+  "devDependencies": { "@tailwindcss/cli": "^4.1.0", "tailwindcss": "^4.1.0" }
+}
