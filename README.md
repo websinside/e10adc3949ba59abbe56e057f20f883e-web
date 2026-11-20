@@ -25,3 +25,5 @@ El teléfono configurado es +56 9 9476 7883. El panel lateral prepara un mensaje
 La carpeta pública es `dist`. `.openai/hosting.json` conserva la identidad de Sites. La publicación inicial es privada en Sites. El dominio nathycostura.cl requiere configuración de dominio por separado.
 
 Las fichas de los uniformes del Colegio San Ignacio de Calera de Tango abren un modal con descripción, confección a medida e imagen ampliable al 200 %. El botón flotante abre WhatsApp directamente; el panel lateral permite cotizar la prenda seleccionada sin datos obligatorios.
+
+Las fotos de modelos y productos son archivos PNG independientes extraídos de los afiches originales. Para reproducirlos en Windows, ejecuta `./scripts/crop-catalog.ps1`. El selector Chica/Chico cambia la foto de portada; las fichas usan las prendas recortadas.

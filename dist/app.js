@@ -65,7 +65,7 @@ function resetZoom() {
 }
 document.querySelectorAll('[data-view-product]').forEach(button => button.addEventListener('click', () => {
   viewedProduct = button.dataset.viewProduct;
-  const image = button.closest('article').querySelector('.product-visual svg').cloneNode(true);
+  const image = button.closest('article').querySelector('.product-visual img').cloneNode(true);
   image.querySelectorAll('[id]').forEach(node => { const oldId = node.id; node.id = 'detail-' + oldId; image.querySelectorAll('[clip-path]').forEach(clipped => { if (clipped.getAttribute('clip-path') === 'url(#' + oldId + ')') clipped.setAttribute('clip-path', 'url(#detail-' + oldId + ')'); }); });
   document.querySelector('#product-image').replaceChildren(image);
   document.querySelector('#product-title').textContent = viewedProduct;
@@ -98,3 +98,13 @@ document.querySelector('#quote-product').addEventListener('click', () => {
   document.documentElement.classList.add('drawer-open');
   triggers.forEach(item => item.setAttribute('aria-expanded', 'true'));
 });
+
+// Keep both supplied models available without automatic movement.
+const modelButtons = [...document.querySelectorAll('[data-model]')];
+modelButtons.forEach(button => button.addEventListener('click', () => {
+  const girl = button.dataset.model === 'chica';
+  document.querySelector('#hero-model-image').setAttribute('src', girl ? 'assets/modelo-chica.png' : 'assets/modelo-chico.png');
+  document.querySelector('#hero-model-image').setAttribute('alt', (girl ? 'Chica' : 'Chico') + ' con el buzo del Colegio San Ignacio de Calera de Tango, confeccionado por nathycostura.cl');
+  modelButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  document.querySelector('#model-status').textContent = 'Mostrando uniforme en ' + button.dataset.model + '.';
+}));

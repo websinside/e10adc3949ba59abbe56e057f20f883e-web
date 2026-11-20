@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="Uniformes escolares a medida y tallas grandes, arreglos de ropa y confecciones para el hogar en Calera de Tango.">
     <meta name="twitter:image" content="https://nathycostura.cl/assets/uniformes-nathy-chica.png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="preload" href="assets/uniformes-nathy-chica.png" as="image" fetchpriority="high">
+    <link rel="preload" href="assets/modelo-chica.png" as="image" fetchpriority="high">
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
     <script type="application/ld+json">
@@ -219,16 +219,15 @@
         </div>
         <figure class="relative bg-cream mx-2 lg:mx-0">
           <div class="absolute inset-3 stitch pointer-events-none z-10" aria-hidden="true"></div>
-          <svg viewBox="160 245 405 620" role="img" aria-label="Estudiante con el buzo del Colegio San Ignacio de Calera de Tango, confeccionado por nathycostura.cl" class="w-full aspect-[405/515] lg:aspect-[405/520]"
-            preserveAspectRatio="xMidYMin meet">
-            <defs>
-              <clipPath id="crop-1">
-                <rect x="160" y="245" width="405" height="590" />
-              </clipPath>
-            </defs>
-            <image clip-path="url(#crop-1)" href="assets/uniformes-nathy-chica.png" width="1076" height="1462" />
-          </svg>
-          <figcaption class="absolute bottom-7 left-0 right-0 flex justify-center"><span class="bg-paper px-5 py-3 text-sm border border-rule">Un buen comienzo, a tu medida.</span></figcaption>
+          <img id="hero-model-image" src="assets/modelo-chica.png" width="290" height="585" class="w-full h-[32rem] lg:h-[38rem] object-contain" alt="Chica con el buzo del Colegio San Ignacio de Calera de Tango, confeccionado por nathycostura.cl" fetchpriority="high">
+          <figcaption class="relative z-20 flex flex-col items-center gap-3 pt-3 pb-5 px-3">
+            <div class="flex border border-navy" role="group" aria-label="Elegir modelo del uniforme">
+              <button type="button" class="model-choice" data-model="chica" aria-pressed="true">Chica</button>
+              <button type="button" class="model-choice" data-model="chico" aria-pressed="false">Chico</button>
+            </div>
+            <span class="text-sm text-muted">Un buen comienzo, a tu medida.</span>
+            <span id="model-status" class="sr-only" aria-live="polite">Mostrando uniforme en chica.</span>
+          </figcaption>
           <span class="absolute top-5 right-5 lg:-right-5 bg-navy text-paper w-24 h-24 rounded-full flex items-center justify-center text-center text-sm leading-snug p-3 rotate-6">Hecho<br>para
             ti</span>
         </figure>
@@ -261,22 +260,14 @@
         <p class="sr-only" id="filter-status" aria-live="polite"></p>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-8" id="products">
           <article class="product min-w-0" data-category="buzos">
-            <button type="button" class="product-visual block" data-view-product="Buzo completo" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Buzo completo"><svg viewBox="145 340 920 630" role="img" aria-label="Chaqueta y pantalón del buzo del Colegio San Ignacio de Calera de Tango"><defs><clipPath id="crop-2"><rect x="145" y="340" width="920" height="630"/></clipPath></defs><image clip-path="url(#crop-2)" href="assets/buzo-san-ignacio.png" width="1254" height="1254"/></svg></button>
+            <button type="button" class="product-visual block" data-view-product="Buzo completo" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Buzo completo"><img src="assets/buzo-completo.png" width="920" height="630" class="w-full h-full object-contain" alt="Buzo completo del Colegio San Ignacio de Calera de Tango" loading="lazy"></button>
             <h3 class="text-2xl mt-4"><button type="button" data-view-product="Buzo completo" aria-haspopup="dialog" aria-controls="product-dialog"
                 class="text-left hover:underline underline-offset-4">Buzo completo</button></h3>
             <p class="text-sm text-muted mt-1">Comodidad para cada día</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false"
               class="nav-link underline underline-offset-4 mt-2" data-product="Buzo completo">Consultar</button>
           </article>
           <article class="product min-w-0" data-category="poleras">
-            <button type="button" class="product-visual block" data-view-product="Polera blanca" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Polera blanca"><svg
-                viewBox="705 250 305 260" role="img" aria-label="Polera escolar blanca con cuello">
-                <defs>
-                  <clipPath id="crop-3">
-                    <rect x="705" y="250" width="305" height="250" />
-                  </clipPath>
-                </defs>
-                <image clip-path="url(#crop-3)" href="assets/uniformes-nathy.png" width="1076" height="1462" />
-              </svg></button>
+            <button type="button" class="product-visual block" data-view-product="Polera blanca" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Polera blanca"><img src="assets/polera-blanca.png" width="305" height="250" class="w-full h-full object-contain" alt="Polera blanca del Colegio San Ignacio de Calera de Tango" loading="lazy"></button>
             <h3 class="text-2xl mt-4"><button type="button" data-view-product="Polera blanca" aria-haspopup="dialog" aria-controls="product-dialog"
                 class="text-left hover:underline underline-offset-4">Polera blanca</button></h3>
             <p class="text-sm text-muted mt-1">Un básico del uniforme</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false"
@@ -284,14 +275,7 @@
           </article>
           <article class="product min-w-0" data-category="poleras">
             <button type="button" class="product-visual block" data-view-product="Polera deportiva" aria-haspopup="dialog" aria-controls="product-dialog"
-              aria-label="Ver detalles de Polera deportiva"><svg viewBox="696 561 320 250" role="img" aria-label="Polera de educación física negra con detalles rojos y amarillos">
-                <defs>
-                  <clipPath id="crop-4">
-                    <rect x="696" y="561" width="320" height="250" />
-                  </clipPath>
-                </defs>
-                <image clip-path="url(#crop-4)" href="assets/uniformes-nathy.png" width="1076" height="1462" />
-              </svg></button>
+              aria-label="Ver detalles de Polera deportiva"><img src="assets/polera-deportiva.png" width="320" height="250" class="w-full h-full object-contain" alt="Polera deportiva del Colegio San Ignacio de Calera de Tango" loading="lazy"></button>
             <h3 class="text-2xl mt-4"><button type="button" data-view-product="Polera deportiva" aria-haspopup="dialog" aria-controls="product-dialog"
                 class="text-left hover:underline underline-offset-4">Polera deportiva</button></h3>
             <p class="text-sm text-muted mt-1">Para moverse con libertad</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false"
@@ -299,29 +283,14 @@
           </article>
           <article class="product min-w-0" data-category="buzos">
             <button type="button" class="product-visual block" data-view-product="Polerón con capucha" aria-haspopup="dialog" aria-controls="product-dialog"
-              aria-label="Ver detalles de Polerón con capucha"><svg viewBox="396 885 300 285" role="img" aria-label="Polerón azul marino con capucha">
-                <defs>
-                  <clipPath id="crop-5">
-                    <rect x="396" y="885" width="300" height="285" />
-                  </clipPath>
-                </defs>
-                <image clip-path="url(#crop-5)" href="assets/uniformes-nathy.png" width="1076" height="1462" />
-              </svg></button>
+              aria-label="Ver detalles de Polerón con capucha"><img src="assets/poleron-azul-marino.png" width="300" height="285" class="w-full h-full object-contain" alt="Polerón con capucha del Colegio San Ignacio de Calera de Tango" loading="lazy"></button>
             <h3 class="text-2xl mt-4"><button type="button" data-view-product="Polerón con capucha" aria-haspopup="dialog" aria-controls="product-dialog"
                 class="text-left hover:underline underline-offset-4">Polerón con capucha</button></h3>
             <p class="text-sm text-muted mt-1">Abrigo en azul marino</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false"
               class="nav-link underline underline-offset-4 mt-2" data-product="Polerón con capucha">Consultar</button>
           </article>
           <article class="product min-w-0" data-category="gorros">
-            <button type="button" class="product-visual block" data-view-product="Jockey escolar" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Jockey escolar"><svg
-                viewBox="744 920 305 245" role="img" aria-label="Jockey escolar azul marino">
-                <defs>
-                  <clipPath id="crop-6">
-                    <rect x="744" y="920" width="305" height="245" />
-                  </clipPath>
-                </defs>
-                <image clip-path="url(#crop-6)" href="assets/uniformes-nathy.png" width="1076" height="1462" />
-              </svg></button>
+            <button type="button" class="product-visual block" data-view-product="Jockey escolar" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Jockey escolar"><img src="assets/jockey-escolar.png" width="305" height="245" class="w-full h-full object-contain" alt="Jockey escolar del Colegio San Ignacio de Calera de Tango" loading="lazy"></button>
             <h3 class="text-2xl mt-4"><button type="button" data-view-product="Jockey escolar" aria-haspopup="dialog" aria-controls="product-dialog"
                 class="text-left hover:underline underline-offset-4">Jockey escolar</button></h3>
             <p class="text-sm text-muted mt-1">El detalle que completa</p><button type="button" data-open-quote aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false"
