@@ -179,7 +179,11 @@ showSlide(0);
 const turnButton = document.querySelector('#turn-product');
 const productImageBox = document.querySelector('#product-image');
 let frontSource = '', backSource = '', showingBack = false;
+let turning = false, turnVersion = 0;
 function configureProductTurn(image) {
+  turnVersion++;
+  turning = false;
+  turnButton.disabled = false;
   frontSource = image.getAttribute('src');
   backSource = image.dataset.backSrc || '';
   showingBack = false;
@@ -191,16 +195,45 @@ function configureProductTurn(image) {
     const preload = new Image(); preload.src = backSource;
   } else { ['role','tabindex','aria-label'].forEach(attr=>productImageBox.removeAttribute(attr)); }
 }
-function turnProduct() {
-  if(!backSource) return;
-  showingBack = !showingBack;
+async function turnProduct() {
+  if(!backSource || turning) return;
+  const version = turnVersion;
   const image = productImageBox.querySelector('img');
-  image.src = showingBack ? backSource : frontSource;
-  image.alt = viewedProduct + (showingBack ? ', vista de espalda' : ', vista de frente');
-  turnButton.setAttribute('aria-pressed',String(showingBack));
-  turnButton.textContent = showingBack ? 'Girar · Ver frente' : 'Girar · Ver espalda';
-  productImageBox.setAttribute('aria-label',showingBack ? 'Girar prenda para ver el frente' : 'Girar prenda para ver la espalda');
-  resetZoom();
+  const nextBack = !showingBack;
+  const nextSource = nextBack ? backSource : frontSource;
+  turning = true;
+  turnButton.disabled = true;
+  try {
+    const ready = new Image(); ready.src = nextSource;
+    await ready.decode();
+    if(version !== turnVersion || !productDialog.open) return;
+    resetZoom();
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!reducedMotion) {
+      await image.animate([
+        {transform:'perspective(1000px) rotateY(0deg)',opacity:1},
+        {transform:'perspective(1000px) rotateY(90deg)',opacity:.35}
+      ],{duration:180,easing:'cubic-bezier(.55,0,1,.45)',fill:'forwards'}).finished;
+    }
+    if(version !== turnVersion || !productDialog.open) { image.getAnimations().forEach(animation=>animation.cancel()); return; }
+    showingBack = nextBack;
+    image.src = nextSource;
+    image.alt = viewedProduct + (showingBack ? ', vista de espalda' : ', vista de frente');
+    turnButton.setAttribute('aria-pressed',String(showingBack));
+    turnButton.textContent = showingBack ? 'Girar · Ver frente' : 'Girar · Ver espalda';
+    productImageBox.setAttribute('aria-label',showingBack ? 'Girar prenda para ver el frente' : 'Girar prenda para ver la espalda');
+    image.getAnimations().forEach(animation=>animation.cancel());
+    if(!reducedMotion) {
+      await image.animate([
+        {transform:'perspective(1000px) rotateY(-90deg)',opacity:.35},
+        {transform:'perspective(1000px) rotateY(0deg)',opacity:1}
+      ],{duration:240,easing:'cubic-bezier(.16,1,.3,1)'}).finished;
+    }
+  } catch {
+    image.getAnimations().forEach(animation=>animation.cancel());
+  } finally {
+    if(version === turnVersion) { turning = false; turnButton.disabled = false; }
+  }
 }
 turnButton.addEventListener('click',turnProduct);
 productImageBox.addEventListener('click',turnProduct);
