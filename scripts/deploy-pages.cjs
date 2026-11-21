@@ -5,7 +5,7 @@ module.exports = async ({ github, context, core }) => {
   if (!/^\d+$/.test(artifactId || '')) throw new Error('Missing Pages artifact ID');
   const { owner, repo } = context.repo;
   const { data: deployment } = await github.request('POST /repos/{owner}/{repo}/pages/deployments', {
-    owner, repo, artifact_id: artifactId, pages_build_version: context.sha,
+    owner, repo, artifact_id: Number(artifactId), pages_build_version: context.sha,
     oidc_token: await core.getIDToken()
   });
   core.setOutput('page_url', deployment.page_url);
