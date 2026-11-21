@@ -943,3 +943,18 @@
  body[data-school-page][data-school-selected="true"] [aria-label="Filtrar confecciones"] {flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
  body[data-school-page][data-school-selected="true"] [data-filter] {flex-shrink:0;white-space:nowrap;}
 }
+/* Selected school uses a compact app header, exclusively on mobile. */
+@media (max-width:47.999rem) {
+ body[data-school-page][data-school-selected="true"] .store-header-shell {display:none;}
+ body[data-school-page][data-school-selected="true"] .mobile-school-selection {
+  position:sticky;top:0;z-index:50;display:flex;flex-direction:row;align-items:center;
+  gap:14px;width:100%;max-width:none;margin:0;padding:12px 16px;
+  min-height:68px;background:var(--store-paper);border-bottom:1px solid var(--store-rule);
+  box-shadow:0 3px 14px #25142208;
+ }
+ body[data-school-page][data-school-selected="true"] #selected-school-summary {display:block;font-size:1rem;line-height:1.25;color:var(--store-ink);font-weight:800;}
+ .mobile-school-selection [data-change-school] {flex-shrink:0;min-height:44px;padding:8px 12px;}
+ body[data-school-page][data-school-selected="true"] #uniformes {animation:school-catalog-enter .24s ease-out both;}
+ @keyframes school-catalog-enter {from{opacity:0;transform:translateX(18px);}to{opacity:1;transform:translateX(0);}}
+}
+@media (prefers-reduced-motion:reduce) {body[data-school-page][data-school-selected="true"] #uniformes {animation:none;}}
