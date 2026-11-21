@@ -4,7 +4,7 @@ filters.forEach(button => button.addEventListener('click', () => {
   filters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   let count = 0;
   products.forEach(product => {
-    product.hidden = button.dataset.filter !== 'todos' && product.dataset.category !== button.dataset.filter;
+    product.hidden = (button.dataset.filter !== 'todos' && product.dataset.category !== button.dataset.filter) || !matchesSelectedSchool(product);
     if (!product.hidden) count++;
   });
   document.querySelector('#filter-status').textContent = `${count} confecciones en ${button.textContent.trim()}.`;
@@ -250,12 +250,17 @@ function setMobileScreen(screen, scroll = true) {
   });
   if(scroll) window.scrollTo({top:0,behavior:'instant'});
 }
-mobileScreenButtons.forEach(button => button.addEventListener('click',()=>setMobileScreen(button.dataset.mobileScreen)));
+mobileScreenButtons.forEach(button => button.addEventListener('click',()=>{
+  if(!mobileLayout.matches) return;
+  location.href=button.dataset.mobileScreen==='colegios'?'colegios.htm':'./';
+}));
 document.addEventListener('click',event=>{
   if(!mobileLayout.matches) return;
   const link=event.target.closest('a[href^="#"]');
   if(!link) return;
   const hash=link.getAttribute('href');
+  if(hash==='#colegios'||hash==='#uniformes') { event.preventDefault(); location.href='colegios.htm'; return; }
+  if(document.body.dataset.schoolPage) { event.preventDefault(); location.href='./'+hash; return; }
   const target=hash.length>1 ? document.getElementById(hash.slice(1)) : document.getElementById('contenido');
   if(!target) return;
   const panel=target.closest('[data-mobile-panel]');
@@ -271,3 +276,31 @@ function syncMobileHash() {
 window.addEventListener('hashchange',syncMobileHash);
 mobileLayout.addEventListener('change',syncMobileHash);
 syncMobileHash();
+
+function matchesSelectedSchool(product) {
+  const school=new URLSearchParams(location.search).get('colegio');
+  return !window.matchMedia('(max-width: 47.999rem)').matches || !document.body.dataset.schoolPage || !school || school==='todos' || product.dataset.schoolId===school;
+}
+function showSchoolSelection() {
+  if(!document.body.dataset.schoolPage) return;
+  const school=new URLSearchParams(location.search).get('colegio');
+  const choice=[...document.querySelectorAll('[data-select-school]')].find(button=>button.dataset.selectSchool===school);
+  document.body.dataset.schoolSelected=choice?'true':'false';
+  if(choice) {
+    document.querySelector('#selected-school-summary').textContent=school==='todos'?'Todos los colegios y jardín infantil':choice.querySelector('strong').textContent;
+    document.querySelector('#uniformes-title').textContent=school==='todos'?'Todos los uniformes':choice.querySelector('strong').textContent;
+  }
+  const category=document.querySelector('[data-filter][aria-pressed="true"]').dataset.filter;
+  products.forEach(product=>product.hidden=!matchesSelectedSchool(product)||(category!=='todos'&&product.dataset.category!==category));
+  setMobileScreen('colegios',false);
+}
+document.querySelectorAll('[data-select-school]').forEach(button=>button.addEventListener('click',()=>{
+  history.pushState({},'', 'colegios.htm?colegio='+button.dataset.selectSchool);
+  filters[0].click(); showSchoolSelection(); window.scrollTo({top:0,behavior:'instant'});
+}));
+document.querySelector('[data-change-school]').addEventListener('click',()=>{
+  history.pushState({},'','colegios.htm');showSchoolSelection();window.scrollTo({top:0,behavior:'instant'});
+});
+window.addEventListener('popstate',showSchoolSelection);
+mobileLayout.addEventListener('change',showSchoolSelection);
+showSchoolSelection();

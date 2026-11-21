@@ -907,3 +907,28 @@
   #products .product [data-open-quote] svg { display:none; }
   #products .product-visual { padding:.25rem; }
 }
+.mobile-school-directory,.mobile-school-selection {display:none;}
+@media (max-width:47.999rem) {
+ body[data-school-page] #colegios {display:none;}
+ body[data-school-page]:not([data-school-selected="true"]) #uniformes {display:none;}
+ body[data-school-page]:not([data-school-selected="true"]) .mobile-school-directory {display:block;}
+ body[data-school-page][data-school-selected="true"] .mobile-school-selection {display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding-top:24px;}
+ body[data-school-page][data-school-selected="true"] #uniformes {padding-top:24px;}
+ body[data-school-page] #uniformes > div:first-child > p:last-child {display:none;}
+ .mobile-school-directory {padding-top:32px;padding-bottom:40px;}
+ .mobile-school-directory h1 {font-size:2.2rem;line-height:1.12;margin:12px 0 16px;letter-spacing:-.035em;}
+ .school-choice-list {display:grid;gap:12px;margin:26px 0 16px;}
+ .school-choice {display:grid;grid-template-columns:68px minmax(0,1fr) 16px;gap:14px;align-items:center;text-align:left;width:100%;padding:16px 12px;border:1px solid var(--store-rule);border-radius:20px;background:white;box-shadow:0 4px 16px #25142205;}
+ .school-choice:active {transform:scale(.98);background:var(--store-accent-soft);}
+ .school-choice-image {display:flex;align-items:center;justify-content:center;height:72px;background:var(--store-warm);border-radius:12px;overflow:hidden;}
+ .school-choice-image img {width:60px;height:64px;object-fit:contain;}
+ .school-choice strong {font-size:1rem;line-height:1.25;display:block;}
+ .school-choice small {display:block;font-size:.875rem;color:var(--store-muted);margin-top:4px;}
+ .school-choice-count {display:inline-block;font-size:.75rem;color:var(--store-accent);background:var(--store-accent-soft);padding:3px 8px;border-radius:20px;margin-top:8px;}
+ .school-all {display:block;width:100%;padding:16px;background:var(--store-accent);color:white;border-radius:16px;font-weight:800;font-size:1rem;}
+ .school-all span {display:block;font-size:.875rem;font-weight:400;margin-top:3px;}
+ .school-other {display:block;border:1px dashed var(--store-rule);border-radius:16px;padding:20px;margin-top:16px;}
+ .school-other strong {display:block;font-size:1rem;color:var(--store-whatsapp);}
+ .school-other span {display:block;font-size:.875rem;color:var(--store-muted);margin-top:7px;line-height:1.5;}
+ #selected-school-summary {font-weight:800;color:var(--store-accent);}
+}
