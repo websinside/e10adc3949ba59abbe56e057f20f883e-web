@@ -1,0 +1,32 @@
+{
+  "id": "./",
+  "name": "Nathy Costura",
+  "short_name": "Nathy Costura",
+  "description": "Uniformes escolares y confección a medida. Elige tu colegio y cotiza con Nathy.",
+  "lang": "es-CL",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#b4023d",
+  "icons": [
+    {
+      "src": "assets/pwa/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/pwa/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ver colegios",
+      "url": "./colegios.htm"
+    }
+  ]
+}

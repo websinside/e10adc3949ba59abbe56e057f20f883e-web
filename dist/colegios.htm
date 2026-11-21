@@ -12,6 +12,12 @@
     <meta name="geo.region" content="CL-RM">
     <meta name="geo.placename" content="Calera de Tango">
     <meta name="theme-color" content="#b4023d">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="assets/pwa/icon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Nathy Costura">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <script src="pwa.js" defer></script>
     <meta property="og:site_name" content="nathycostura.cl">
     <meta property="og:locale" content="es_CL">
     <meta property="og:url" content="https://nathycostura.cl/">
@@ -1036,6 +1042,7 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>lucide.createIcons();</script>
-  </body>
+  <button type="button" id="install-app" class="pwa-install" hidden>Instalar Nathy Costura</button>
+</body>
 
 </html>

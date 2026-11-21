@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify && node scripts/build-pages.mjs",
+    "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify && node scripts/build-pages.mjs && node scripts/build-pwa.mjs",
     "dev": "node scripts/serve.mjs",
     "watch": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch"
   },
