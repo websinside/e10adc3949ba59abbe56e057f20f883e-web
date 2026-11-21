@@ -76,6 +76,8 @@ const productDialog = document.querySelector('#product-dialog');
 const zoomStage = document.querySelector('#zoom-stage');
 const zoomButton = document.querySelector('#toggle-zoom');
 const productDescriptions = {
+'Delantal de jardín modelo 1': 'Delantal infantil con cuerpo azul, mangas rojas, pechera amarilla, cuello verde y bolsillo delantero amarillo. Botones al frente. Usa Girar para ver la espalda.',
+'Delantal de jardín modelo 2': 'Delantal infantil azul con mangas rojas, cuello verde y terminaciones amarillas. Este modelo tiene botones en la espalda. Usa Girar para ver ambas vistas.',
 "Buzo completo El Roto Chileno": "Chaqueta azul marino con diseño rojo en V y pantalón con franjas rojas. Uniforme para estudiantes de la Escuela El Roto Chileno de Talagante. Consulta por tu talla y confección a medida.",
 "Polera El Roto Chileno": "Polera roja con cuello azul marino e insignia de El Roto Chileno. Uniforme para estudiantes de la Escuela El Roto Chileno de Talagante. Consulta por tu talla y confección a medida.",
 "Polerón El Roto Chileno": "Polerón rojo con capucha, cierre y terminaciones azul marino. Uniforme para estudiantes de la Escuela El Roto Chileno de Talagante. Consulta por tu talla y confección a medida.",
@@ -99,8 +101,9 @@ document.querySelectorAll('[data-view-product]').forEach(button => button.addEve
   viewedProduct = button.dataset.viewProduct;
   const isCalera = viewedProduct === 'Polera Colegio Calera de Tango';
   const isRoto = viewedProduct.includes('El Roto Chileno');
-  document.querySelector('#product-school').textContent = isRoto ? 'Escuela El Roto Chileno · Talagante' : isCalera ? 'Colegio Calera de Tango' : 'San Ignacio · Calera de Tango';
-  document.querySelector('#product-school-description').textContent = isRoto ? 'Para estudiantes de la Escuela El Roto Chileno de Talagante.' : isCalera ? 'Para estudiantes del Colegio Calera de Tango.' : 'Para estudiantes del Colegio San Ignacio de Calera de Tango.';
+  const isJardin = viewedProduct.startsWith('Delantal de jardín');
+  document.querySelector('#product-school').textContent = isJardin ? 'Jardín infantil' : isRoto ? 'Escuela El Roto Chileno · Talagante' : isCalera ? 'Colegio Calera de Tango' : 'San Ignacio · Calera de Tango';
+  document.querySelector('#product-school-description').textContent = isJardin ? 'Confección para niños de jardín infantil.' : isRoto ? 'Para estudiantes de la Escuela El Roto Chileno de Talagante.' : isCalera ? 'Para estudiantes del Colegio Calera de Tango.' : 'Para estudiantes del Colegio San Ignacio de Calera de Tango.';
   const image = button.closest('article').querySelector('.product-visual img').cloneNode(true);
   image.querySelectorAll('[id]').forEach(node => {
     const oldId = node.id;
@@ -110,6 +113,7 @@ document.querySelectorAll('[data-view-product]').forEach(button => button.addEve
     });
   });
   document.querySelector('#product-image').replaceChildren(image);
+  configureProductTurn(image);
   document.querySelector('#product-title').textContent = viewedProduct;
   document.querySelector('#product-description').textContent = productDescriptions[viewedProduct];
   resetZoom();
@@ -171,3 +175,33 @@ carousel.addEventListener('pointerup', event => {
 });
 carousel.addEventListener('pointercancel', () => { swipeStart = null; });
 showSlide(0);
+
+const turnButton = document.querySelector('#turn-product');
+const productImageBox = document.querySelector('#product-image');
+let frontSource = '', backSource = '', showingBack = false;
+function configureProductTurn(image) {
+  frontSource = image.getAttribute('src');
+  backSource = image.dataset.backSrc || '';
+  showingBack = false;
+  turnButton.hidden = !backSource;
+  turnButton.setAttribute('aria-pressed','false');
+  turnButton.textContent = 'Girar · Ver espalda';
+  if(backSource) {
+    productImageBox.setAttribute('role','button'); productImageBox.setAttribute('tabindex','0'); productImageBox.setAttribute('aria-label','Girar prenda para ver la espalda');
+    const preload = new Image(); preload.src = backSource;
+  } else { ['role','tabindex','aria-label'].forEach(attr=>productImageBox.removeAttribute(attr)); }
+}
+function turnProduct() {
+  if(!backSource) return;
+  showingBack = !showingBack;
+  const image = productImageBox.querySelector('img');
+  image.src = showingBack ? backSource : frontSource;
+  image.alt = viewedProduct + (showingBack ? ', vista de espalda' : ', vista de frente');
+  turnButton.setAttribute('aria-pressed',String(showingBack));
+  turnButton.textContent = showingBack ? 'Girar · Ver frente' : 'Girar · Ver espalda';
+  productImageBox.setAttribute('aria-label',showingBack ? 'Girar prenda para ver el frente' : 'Girar prenda para ver la espalda');
+  resetZoom();
+}
+turnButton.addEventListener('click',turnProduct);
+productImageBox.addEventListener('click',turnProduct);
+productImageBox.addEventListener('keydown',event=>{if(backSource && (event.key==='Enter'||event.key===' ')){event.preventDefault();turnProduct();}});

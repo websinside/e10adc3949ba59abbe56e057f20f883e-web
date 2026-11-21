@@ -391,9 +391,10 @@
             <p class="text-muted mt-3 max-w-[58ch]">Uniformes del Colegio San Ignacio, Colegio Calera de Tango y Escuela El Roto Chileno de Talagante. Elige la prenda y consulta por tu talla o confección a medida.</p>
           </div>
           <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar confecciones">
-            <button type="button" class="filter" data-filter="todos" aria-pressed="true">Todos (9)</button>
+            <button type="button" class="filter" data-filter="todos" aria-pressed="true">Todos (11)</button>
             <button type="button" class="filter" data-filter="buzos" aria-pressed="false">Buzos y polerones</button>
             <button type="button" class="filter" data-filter="poleras" aria-pressed="false">Poleras</button>
+            <button type="button" class="filter" data-filter="jardin" aria-pressed="false">Jardín infantil</button>
             <button type="button" class="filter" data-filter="gorros" aria-pressed="false">Gorros</button>
           </div>
         </div>
@@ -593,6 +594,48 @@
               </button>
               <button type="button" data-view-product="Polerón El Roto Chileno" aria-haspopup="dialog" aria-controls="product-dialog" class="btn btn-outline btn-sm px-3"
                 aria-label="Ver detalles de Polerón El Roto Chileno">
+                <i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+<article class="product min-w-0" data-category="jardin">
+            <button type="button" class="product-visual block" data-view-product="Delantal de jardín modelo 1" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Delantal de jardín modelo 1">
+              <img src="assets/jardin-modelo-1-frente.webp" data-back-src="assets/jardin-modelo-1-espalda.webp" width="768" height="800" alt="Delantal infantil modelo 1, vista de frente" loading="lazy">
+              <span class="product-zoom-hint" aria-hidden="true"><i data-lucide="zoom-in" class="w-4 h-4"></i></span>
+            </button>
+            <span class="product-tag">Jardín infantil</span>
+            <h3 class="text-xl mt-1">
+              <button type="button" data-view-product="Delantal de jardín modelo 1" aria-haspopup="dialog" aria-controls="product-dialog" class="text-left hover:text-gold transition-colors">Delantal de jardín modelo 1</button>
+            </h3>
+            <p class="text-sm text-muted mt-1 flex-1">Delantal infantil multicolor. Abre la ficha para ver el frente y la espalda con el botón Girar.</p>
+            <div class="flex items-center gap-2 mt-4 pt-3 border-t border-rule">
+              <button type="button" data-open-quote data-product="Delantal de jardín modelo 1" aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="btn btn-soft btn-sm flex-1">
+                <i data-lucide="message-circle" class="w-4 h-4" aria-hidden="true"></i>
+                <span>Cotizar</span>
+              </button>
+              <button type="button" data-view-product="Delantal de jardín modelo 1" aria-haspopup="dialog" aria-controls="product-dialog" class="btn btn-outline btn-sm px-3"
+                aria-label="Ver detalles de Delantal de jardín modelo 1">
+                <i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+<article class="product min-w-0" data-category="jardin">
+            <button type="button" class="product-visual block" data-view-product="Delantal de jardín modelo 2" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Delantal de jardín modelo 2">
+              <img src="assets/jardin-modelo-2-frente.webp" data-back-src="assets/jardin-modelo-2-espalda.webp" width="768" height="750" alt="Delantal infantil modelo 2, vista de frente" loading="lazy">
+              <span class="product-zoom-hint" aria-hidden="true"><i data-lucide="zoom-in" class="w-4 h-4"></i></span>
+            </button>
+            <span class="product-tag">Jardín infantil</span>
+            <h3 class="text-xl mt-1">
+              <button type="button" data-view-product="Delantal de jardín modelo 2" aria-haspopup="dialog" aria-controls="product-dialog" class="text-left hover:text-gold transition-colors">Delantal de jardín modelo 2</button>
+            </h3>
+            <p class="text-sm text-muted mt-1 flex-1">Delantal infantil multicolor. Abre la ficha para ver el frente y la espalda con el botón Girar.</p>
+            <div class="flex items-center gap-2 mt-4 pt-3 border-t border-rule">
+              <button type="button" data-open-quote data-product="Delantal de jardín modelo 2" aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="btn btn-soft btn-sm flex-1">
+                <i data-lucide="message-circle" class="w-4 h-4" aria-hidden="true"></i>
+                <span>Cotizar</span>
+              </button>
+              <button type="button" data-view-product="Delantal de jardín modelo 2" aria-haspopup="dialog" aria-controls="product-dialog" class="btn btn-outline btn-sm px-3"
+                aria-label="Ver detalles de Delantal de jardín modelo 2">
                 <i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i>
               </button>
             </div>
@@ -830,6 +873,7 @@
             <div id="product-image" class="product-image"></div>
           </div>
           <div class="flex items-center justify-between gap-3 mt-3">
+            <button type="button" id="turn-product" class="btn btn-soft btn-sm" aria-pressed="false" hidden>Girar · Ver espalda</button>
             <button type="button" class="nav-link text-sm text-gold" id="toggle-zoom" aria-pressed="false">Ampliar imagen</button>
             <p id="zoom-help" class="text-xs text-muted">Mira los detalles de la prenda.</p>
           </div>
