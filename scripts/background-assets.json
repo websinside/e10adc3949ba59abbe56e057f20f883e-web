@@ -1,0 +1,50 @@
+[
+  {
+    "old": "modelo-infantil-pose-v2.png",
+    "file": "modelo-infantil-fondo-v3.png",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "old": "modelo-chica.png",
+    "file": "modelo-femenino-fondo-v3.png",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "old": "modelo-chico.png",
+    "file": "modelo-masculino-fondo-v3.png",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "old": "buzo-completo.png",
+    "file": "buzo-completo-fondo-v2.png",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "old": "polera-blanca.png",
+    "file": "polera-blanca-fondo-v2.png",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "old": "polera-deportiva.png",
+    "file": "polera-deportiva-fondo-v2.png",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "old": "poleron-azul-marino.png",
+    "file": "poleron-azul-marino-fondo-v2.png",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "old": "jockey-escolar.png",
+    "file": "jockey-escolar-fondo-v2.png",
+    "width": 1254,
+    "height": 1254
+  }
+]

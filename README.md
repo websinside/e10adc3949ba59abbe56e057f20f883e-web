@@ -31,3 +31,7 @@ Las fotos de modelos y productos son archivos PNG independientes extraídos de l
 `assets/modelo-infantil.png` es una imagen ilustrativa generada a partir de la referencia del buzo. Se muestra primero en el carrusel y conserva las otras dos fotos.
 
 El carrusel utiliza `assets/modelo-infantil-pose-v2.png`, una variante con pose de tres cuartos y una mano en el bolsillo. Se conserva la imagen inicial.
+
+Las fotos actuales de modelos y productos incluyen fondos extendidos. Todas las imágenes servidas se publican en WebP. Ejecuta `python scripts/optimize-images.py` para regenerar las versiones optimizadas; `scripts/webp-report.json` registra dimensiones y tamaños. Los originales se conservan. La polera amarilla y su modelo pertenecen al Colegio Calera de Tango y se identifican por separado de San Ignacio.
+
+Los PNG y JPG originales se conservan en `originals/assets/`, fuera de la carpeta publicada. `dist/assets/` contiene las versiones WebP optimizadas, de modo que los originales no aumentan el paquete de publicación.

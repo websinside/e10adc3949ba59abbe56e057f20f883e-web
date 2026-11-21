@@ -1,0 +1,31 @@
+:root {
+  --color-paper: #ffffff;
+  --color-cream: #faf5f7;
+  --color-navy: #251422;
+  --color-navy-light: #3b2036;
+  --color-gold: #b4023d;
+  --color-gold-dark: #960233;
+  --color-muted: #5e4a59;
+  --color-rule: #e9dce2;
+  --color-focus: #b4023d;
+  --color-error: #b4023d;
+  --color-whatsapp: #1f7a4c;
+  --font-display: 'Nunito', Arial, sans-serif;
+  --font-sans: 'Nunito', Arial, sans-serif;
+  --space-2xs: .25rem;
+  --space-xs: .5rem;
+  --space-sm: .75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --ease-in: cubic-bezier(.7,0,.84,0);
+  --ease-in-out: cubic-bezier(.65,0,.35,1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+  --rule-hair: 1px;
+  --radius-square: 0;
+}

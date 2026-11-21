@@ -7,29 +7,57 @@ filters.forEach(button => button.addEventListener('click', () => {
     product.hidden = button.dataset.filter !== 'todos' && product.dataset.category !== button.dataset.filter;
     if (!product.hidden) count++;
   });
-  document.querySelector('#filter-status').textContent = `${count} confecciones en ${button.textContent}.`;
+  document.querySelector('#filter-status').textContent = `${count} confecciones en ${button.textContent.trim()}.`;
 }));
 
 const drawer = document.querySelector('#quote-drawer');
 const triggers = [...document.querySelectorAll('[data-open-quote]')];
+const quickChips = [...document.querySelectorAll('[data-quick-note]')];
 let selectedService = 'Uniforme escolar a medida';
+let selectedType = 'uniforme';
+let selectedNote = '';
 const messageField = document.querySelector('#message');
 const whatsappLink = document.querySelector('#whatsapp-link');
 
-function updateRequest() {
+function buildWhatsappMessage() {
   const details = messageField.value.trim();
-  const message = 'Hola Nathy. Quisiera cotizar un uniforme del Colegio San Ignacio de Calera de Tango: ' + selectedService + '.' + (details ? '\n\n' + details : '');
-  document.querySelector('#selected-service').textContent = selectedService;
-  whatsappLink.href = 'https://wa.me/56994767883?text=' + encodeURIComponent(message);
+  const base = selectedType === 'servicio'
+    ? `Hola Nathy. Quisiera cotizar el servicio de: ${selectedService}.`
+    : `Hola Nathy. Quisiera cotizar (${selectedService}) para uniforme escolar.`;
+  const extras = [selectedNote, details].filter(Boolean).join('\n');
+  return extras ? `${base}\n\n${extras}` : base;
 }
-triggers.forEach(trigger => trigger.addEventListener('click', () => {
-  if (trigger.dataset.product) selectedService = trigger.dataset.product;
-  else selectedService = 'Uniforme escolar a medida';
+
+function updateRequest() {
+  document.querySelector('#selected-service').textContent = selectedService;
+  whatsappLink.href = 'https://wa.me/56994767883?text=' + encodeURIComponent(buildWhatsappMessage());
+}
+
+function openQuoteDrawer(service, type = 'uniforme') {
+  selectedService = service || 'Uniforme escolar a medida';
+  selectedType = type;
   updateRequest();
   drawer.showModal();
   document.documentElement.classList.add('drawer-open');
   triggers.forEach(item => item.setAttribute('aria-expanded', 'true'));
+}
+
+triggers.forEach(trigger => trigger.addEventListener('click', () => {
+  openQuoteDrawer(trigger.dataset.product, trigger.dataset.quoteType || 'uniforme');
 }));
+
+quickChips.forEach(chip => chip.addEventListener('click', () => {
+  const isActive = chip.getAttribute('aria-pressed') === 'true';
+  quickChips.forEach(item => item.setAttribute('aria-pressed', 'false'));
+  if (!isActive) {
+    chip.setAttribute('aria-pressed', 'true');
+    selectedNote = chip.dataset.quickNote;
+  } else {
+    selectedNote = '';
+  }
+  updateRequest();
+}));
+
 document.querySelector('#close-drawer').addEventListener('click', () => drawer.close());
 drawer.addEventListener('click', event => {
   if (event.target !== drawer) return;
@@ -48,11 +76,12 @@ const productDialog = document.querySelector('#product-dialog');
 const zoomStage = document.querySelector('#zoom-stage');
 const zoomButton = document.querySelector('#toggle-zoom');
 const productDescriptions = {
-  'Buzo completo': 'Buzo completo para estudiantes del Colegio San Ignacio de Calera de Tango. Chaqueta con cierre en azul marino, rojo y gris, junto a pantalón azul marino con detalles rojos, según el modelo del catálogo. Lo confeccionamos a medida para acompañar con comodidad la jornada escolar.',
-  'Polera blanca': 'Polera blanca del uniforme del Colegio San Ignacio de Calera de Tango, con cuello y detalles rojos y azul marino según el modelo del catálogo. Una prenda para el día a día escolar, confeccionada según las medidas de cada estudiante.',
-  'Polera deportiva': 'Polera de educación física para estudiantes del Colegio San Ignacio de Calera de Tango. Su diseño negro incorpora detalles rojos y amarillos en los hombros, según el catálogo. La confeccionamos a medida para que cada estudiante pueda moverse con comodidad.',
-  'Polerón con capucha': 'Polerón azul marino para complementar el uniforme del Colegio San Ignacio de Calera de Tango. El modelo del catálogo incluye capucha y bolsillo delantero. Confección a medida, también para estudiantes de tallas grandes.',
-  'Jockey escolar': 'Jockey azul marino para complementar el uniforme del Colegio San Ignacio de Calera de Tango, según el diseño del catálogo. Consulta por las medidas y los detalles de confección de tu pedido.'
+  'Polera Colegio Calera de Tango': 'Polera amarilla del Colegio Calera de Tango, con cuello y puños azul marino, botones oscuros e insignia del establecimiento. Consulta por la confección a medida, las tallas y los detalles de tu pedido.',
+  'Buzo completo': 'Buzo completo para estudiantes del Colegio San Ignacio de Calera de Tango. Chaqueta con cierre en azul marino, rojo y gris, junto a pantalón azul marino con detalles rojos, según el modelo del catálogo. Lo confeccionamos a medida para acompañar con comodidad toda la jornada escolar.',
+  'Polera blanca': 'Polera blanca del uniforme del Colegio San Ignacio de Calera de Tango, con cuello y detalles rojos y azul marino según el modelo del catálogo. Una prenda pensada para el uso diario, confeccionada según las medidas de cada estudiante.',
+  'Polera deportiva': 'Polera de educación física para estudiantes del Colegio San Ignacio de Calera de Tango. Su diseño negro incorpora detalles rojos y amarillos en los hombros, según el catálogo. Confeccionada a medida para moverse con comodidad.',
+  'Polerón con capucha': 'Polerón azul marino para complementar el uniforme del Colegio San Ignacio de Calera de Tango. El modelo del catálogo incluye capucha y bolsillo delantero. Confección a medida, también disponible en tallas grandes.',
+  'Jockey escolar': 'Jockey azul marino para complementar el uniforme del Colegio San Ignacio de Calera de Tango, según el diseño del catálogo. Consulta por disponibilidad, medidas y detalles de confección de tu pedido.'
 };
 let viewedProduct = '';
 function resetZoom() {
@@ -65,8 +94,17 @@ function resetZoom() {
 }
 document.querySelectorAll('[data-view-product]').forEach(button => button.addEventListener('click', () => {
   viewedProduct = button.dataset.viewProduct;
+  const isCalera = viewedProduct === 'Polera Colegio Calera de Tango';
+  document.querySelector('#product-school').textContent = isCalera ? 'Colegio Calera de Tango' : 'San Ignacio · Calera de Tango';
+  document.querySelector('#product-school-description').textContent = isCalera ? 'Para estudiantes del Colegio Calera de Tango.' : 'Para estudiantes del Colegio San Ignacio de Calera de Tango.';
   const image = button.closest('article').querySelector('.product-visual img').cloneNode(true);
-  image.querySelectorAll('[id]').forEach(node => { const oldId = node.id; node.id = 'detail-' + oldId; image.querySelectorAll('[clip-path]').forEach(clipped => { if (clipped.getAttribute('clip-path') === 'url(#' + oldId + ')') clipped.setAttribute('clip-path', 'url(#detail-' + oldId + ')'); }); });
+  image.querySelectorAll('[id]').forEach(node => {
+    const oldId = node.id;
+    node.id = 'detail-' + oldId;
+    image.querySelectorAll('[clip-path]').forEach(clipped => {
+      if (clipped.getAttribute('clip-path') === 'url(#' + oldId + ')') clipped.setAttribute('clip-path', 'url(#detail-' + oldId + ')');
+    });
+  });
   document.querySelector('#product-image').replaceChildren(image);
   document.querySelector('#product-title').textContent = viewedProduct;
   document.querySelector('#product-description').textContent = productDescriptions[viewedProduct];
@@ -91,14 +129,9 @@ productDialog.addEventListener('close', () => {
   if (!drawer.open) document.documentElement.classList.remove('drawer-open');
 });
 document.querySelector('#quote-product').addEventListener('click', () => {
-  selectedService = viewedProduct;
-  updateRequest();
   productDialog.close();
-  drawer.showModal();
-  document.documentElement.classList.add('drawer-open');
-  triggers.forEach(item => item.setAttribute('aria-expanded', 'true'));
+  openQuoteDrawer(viewedProduct, 'uniforme');
 });
-
 
 // Three-image carousel with buttons, keyboard navigation and touch swipe.
 const carousel = document.querySelector('#hero-carousel');
@@ -106,6 +139,7 @@ const slideDots = [...document.querySelectorAll('[data-slide]')];
 let currentSlide = 0;
 function showSlide(index) {
   currentSlide = (index + slideDots.length) % slideDots.length;
+  document.querySelector('#slide-school').textContent = carousel.querySelectorAll('.slide-photo')[currentSlide].dataset.school;
   document.querySelector('#model-track').style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
   slideDots.forEach((dot, i) => dot.setAttribute('aria-pressed', String(i === currentSlide)));
   document.querySelectorAll('.slide-photo').forEach((photo, i) => photo.setAttribute('aria-hidden', String(i !== currentSlide)));
@@ -122,7 +156,7 @@ carousel.addEventListener('keydown', event => {
 });
 let swipeStart;
 carousel.addEventListener('pointerdown', event => {
-  swipeStart = event.pointerType === 'touch' ? {x:event.clientX, y:event.clientY} : null;
+  swipeStart = event.pointerType === 'touch' ? { x: event.clientX, y: event.clientY } : null;
 });
 carousel.addEventListener('pointerup', event => {
   if (!swipeStart) return;

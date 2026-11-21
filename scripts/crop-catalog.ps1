@@ -1,6 +1,6 @@
 # Extract independent images from the supplied posters, preserving their pixels.
 Add-Type -AssemblyName System.Drawing
-$assetDirectory = Join-Path $PSScriptRoot '..\dist\assets'
+$assetDirectory = Join-Path $PSScriptRoot '..\originals\assets'
 $crops = @(
     @{ Source='uniformes-nathy-chica.png'; Output='modelo-chica.png'; X=200; Y=250; Width=290; Height=585 },
     @{ Source='uniformes-nathy.png'; Output='modelo-chico.png'; X=200; Y=250; Width=290; Height=585 },

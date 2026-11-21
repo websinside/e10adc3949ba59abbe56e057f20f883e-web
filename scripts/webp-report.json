@@ -1,0 +1,250 @@
+[
+  {
+    "source": "assets/buzo-completo-fondo-v2.png",
+    "webp": "assets/buzo-completo-fondo-v2.webp",
+    "width": 1254,
+    "height": 1254,
+    "before_bytes": 2080802,
+    "after_bytes": 115594
+  },
+  {
+    "source": "assets/buzo-completo.png",
+    "webp": "assets/buzo-completo.webp",
+    "width": 920,
+    "height": 630,
+    "before_bytes": 1219608,
+    "after_bytes": 60006
+  },
+  {
+    "source": "assets/buzo-san-ignacio.png",
+    "webp": "assets/buzo-san-ignacio.webp",
+    "width": 1254,
+    "height": 1254,
+    "before_bytes": 2338834,
+    "after_bytes": 141050
+  },
+  {
+    "source": "assets/coleccion-escolar.png",
+    "webp": "assets/coleccion-escolar.webp",
+    "width": 1536,
+    "height": 1024,
+    "before_bytes": 2368658,
+    "after_bytes": 118534
+  },
+  {
+    "source": "assets/colegioCaleraDeTango.png",
+    "webp": "assets/colegioCaleraDeTango.webp",
+    "width": 1122,
+    "height": 1402,
+    "before_bytes": 2214166,
+    "after_bytes": 148822
+  },
+  {
+    "source": "assets/colegios/colegio-calera-de-tango.jpg",
+    "webp": "assets/colegios/colegio-calera-de-tango.webp",
+    "width": 374,
+    "height": 387,
+    "before_bytes": 53987,
+    "after_bytes": 223678
+  },
+  {
+    "source": "assets/colegios/escuela-roto-chileno.jpg",
+    "webp": "assets/colegios/escuela-roto-chileno.webp",
+    "width": 464,
+    "height": 551,
+    "before_bytes": 31168,
+    "after_bytes": 119948
+  },
+  {
+    "source": "assets/colegios/escuela-san-ignacio.png",
+    "webp": "assets/colegios/escuela-san-ignacio.webp",
+    "width": 600,
+    "height": 190,
+    "before_bytes": 75944,
+    "after_bytes": 35798
+  },
+  {
+    "source": "assets/jockey-escolar-fondo-v2.png",
+    "webp": "assets/jockey-escolar-fondo-v2.webp",
+    "width": 1254,
+    "height": 1254,
+    "before_bytes": 2042162,
+    "after_bytes": 105436
+  },
+  {
+    "source": "assets/jockey-escolar.png",
+    "webp": "assets/jockey-escolar.webp",
+    "width": 305,
+    "height": 245,
+    "before_bytes": 114507,
+    "after_bytes": 5248
+  },
+  {
+    "source": "assets/logo-horizontal.png",
+    "webp": "assets/logo-horizontal.webp",
+    "width": 1024,
+    "height": 341,
+    "before_bytes": 134569,
+    "after_bytes": 68092
+  },
+  {
+    "source": "assets/logo-icono.png",
+    "webp": "assets/logo-icono.webp",
+    "width": 1024,
+    "height": 1024,
+    "before_bytes": 550787,
+    "after_bytes": 230648
+  },
+  {
+    "source": "assets/logo.png",
+    "webp": "assets/logo.webp",
+    "width": 1254,
+    "height": 1254,
+    "before_bytes": 659215,
+    "after_bytes": 336080
+  },
+  {
+    "source": "assets/logo_horizontal.png",
+    "webp": "assets/logo_horizontal.webp",
+    "width": 2172,
+    "height": 724,
+    "before_bytes": 415209,
+    "after_bytes": 237504
+  },
+  {
+    "source": "assets/modelo-calera-fondo-v2.png",
+    "webp": "assets/modelo-calera-fondo-v2.webp",
+    "width": 1774,
+    "height": 887,
+    "before_bytes": 1643277,
+    "after_bytes": 42016
+  },
+  {
+    "source": "assets/modelo-chica.png",
+    "webp": "assets/modelo-chica.webp",
+    "width": 290,
+    "height": 585,
+    "before_bytes": 289416,
+    "after_bytes": 16564
+  },
+  {
+    "source": "assets/modelo-chico-colegio-calera-de-tango.png",
+    "webp": "assets/modelo-chico-colegio-calera-de-tango.webp",
+    "width": 1122,
+    "height": 1402,
+    "before_bytes": 2089647,
+    "after_bytes": 116934
+  },
+  {
+    "source": "assets/modelo-chico.png",
+    "webp": "assets/modelo-chico.webp",
+    "width": 290,
+    "height": 585,
+    "before_bytes": 293010,
+    "after_bytes": 15836
+  },
+  {
+    "source": "assets/modelo-femenino-fondo-v3.png",
+    "webp": "assets/modelo-femenino-fondo-v3.webp",
+    "width": 1774,
+    "height": 887,
+    "before_bytes": 1635931,
+    "after_bytes": 34622
+  },
+  {
+    "source": "assets/modelo-infantil-fondo-v3.png",
+    "webp": "assets/modelo-infantil-fondo-v3.webp",
+    "width": 1774,
+    "height": 887,
+    "before_bytes": 1640935,
+    "after_bytes": 36586
+  },
+  {
+    "source": "assets/modelo-infantil-pose-v2.png",
+    "webp": "assets/modelo-infantil-pose-v2.webp",
+    "width": 1024,
+    "height": 1536,
+    "before_bytes": 1824871,
+    "after_bytes": 66766
+  },
+  {
+    "source": "assets/modelo-infantil.png",
+    "webp": "assets/modelo-infantil.webp",
+    "width": 1024,
+    "height": 1536,
+    "before_bytes": 1907458,
+    "after_bytes": 75048
+  },
+  {
+    "source": "assets/modelo-masculino-fondo-v3.png",
+    "webp": "assets/modelo-masculino-fondo-v3.webp",
+    "width": 1774,
+    "height": 887,
+    "before_bytes": 1632314,
+    "after_bytes": 34504
+  },
+  {
+    "source": "assets/polera-blanca-fondo-v2.png",
+    "webp": "assets/polera-blanca-fondo-v2.webp",
+    "width": 1254,
+    "height": 1254,
+    "before_bytes": 1942129,
+    "after_bytes": 55984
+  },
+  {
+    "source": "assets/polera-blanca.png",
+    "webp": "assets/polera-blanca.webp",
+    "width": 305,
+    "height": 250,
+    "before_bytes": 125985,
+    "after_bytes": 5366
+  },
+  {
+    "source": "assets/polera-deportiva-fondo-v2.png",
+    "webp": "assets/polera-deportiva-fondo-v2.webp",
+    "width": 1254,
+    "height": 1254,
+    "before_bytes": 1909437,
+    "after_bytes": 57610
+  },
+  {
+    "source": "assets/polera-deportiva.png",
+    "webp": "assets/polera-deportiva.webp",
+    "width": 320,
+    "height": 250,
+    "before_bytes": 122066,
+    "after_bytes": 6554
+  },
+  {
+    "source": "assets/poleron-azul-marino-fondo-v2.png",
+    "webp": "assets/poleron-azul-marino-fondo-v2.webp",
+    "width": 1254,
+    "height": 1254,
+    "before_bytes": 1960566,
+    "after_bytes": 58234
+  },
+  {
+    "source": "assets/poleron-azul-marino.png",
+    "webp": "assets/poleron-azul-marino.webp",
+    "width": 300,
+    "height": 285,
+    "before_bytes": 148478,
+    "after_bytes": 7720
+  },
+  {
+    "source": "assets/uniformes-nathy-chica.png",
+    "webp": "assets/uniformes-nathy-chica.webp",
+    "width": 1076,
+    "height": 1462,
+    "before_bytes": 2057374,
+    "after_bytes": 120036
+  },
+  {
+    "source": "assets/uniformes-nathy.png",
+    "webp": "assets/uniformes-nathy.webp",
+    "width": 1076,
+    "height": 1462,
+    "before_bytes": 2119686,
+    "after_bytes": 128680
+  }
+]
