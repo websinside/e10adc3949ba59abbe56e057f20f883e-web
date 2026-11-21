@@ -1,5 +1,5 @@
 const PREFIX = 'nathy-pwa-';
-const CACHE = PREFIX + '1d9d058aca14f74d';
+const CACHE = PREFIX + '0c5be0f9a7e96d7b';
 const CORE = ["index.html","colegios.htm","offline.html","styles.css","app.js","pwa.js","manifest.webmanifest","assets/pwa/icon-180.png","assets/pwa/icon-192.png","assets/pwa/icon-512.png","assets/logo-icono.webp","assets/logo-horizontal.webp"];
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
