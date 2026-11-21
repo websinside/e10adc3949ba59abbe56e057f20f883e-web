@@ -932,3 +932,14 @@
  .school-other span {display:block;font-size:.875rem;color:var(--store-muted);margin-top:7px;line-height:1.5;}
  #selected-school-summary {font-weight:800;color:var(--store-accent);}
 }
+/* Mobile catalogue: go straight from school selection to its products. */
+@media (max-width:47.999rem) {
+ body[data-school-page][data-school-selected="true"] #uniformes > div:first-child > div:first-child,
+ body[data-school-page][data-school-selected="true"] #selected-school-summary,
+ body[data-school-page][data-school-selected="true"] aside[aria-label="Información de entregas y envíos"] {display:none;}
+ body[data-school-page][data-school-selected="true"] .mobile-school-selection {padding-top:12px;gap:0;}
+ body[data-school-page][data-school-selected="true"] #uniformes {padding-top:12px;}
+ body[data-school-page][data-school-selected="true"] #uniformes > div:first-child {margin-bottom:16px;min-width:0;}
+ body[data-school-page][data-school-selected="true"] [aria-label="Filtrar confecciones"] {flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
+ body[data-school-page][data-school-selected="true"] [data-filter] {flex-shrink:0;white-space:nowrap;}
+}
