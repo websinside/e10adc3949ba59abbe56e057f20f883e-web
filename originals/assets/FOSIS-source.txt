@@ -1,0 +1,3 @@
+Logo descargado desde el sitio oficial https://www.fosis.gob.cl/es/
+Archivo: https://andinoblob.blob.core.windows.net/static/assets/img/LogoTextoCompletoBlanco.png
+El recurso original monocromo se presenta en negro mediante CSS sobre fondo claro.

@@ -858,6 +858,14 @@
 }
 
 @starting-style { .quote-drawer[open] { transform: translateX(100%); } }
+
+/* Institutional acknowledgement provided by the business. */
+.fosis-support { background:var(--store-cream); border-top:1px solid var(--store-rule); padding:24px 16px; color:var(--store-ink); }
+.fosis-support-inner { max-width:900px; margin-inline:auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:20px; text-align:left; }
+.fosis-support-logo { width:140px; max-width:100%; height:auto; display:block; flex-shrink:0; filter:brightness(0); }
+.fosis-support-copy { flex:1 1 260px; min-width:0; }
+.fosis-support-title { margin:0 0 6px; font-size:15px; font-weight:800; }
+.fosis-support-description { margin:0; font-size:14px; line-height:1.5; color:var(--store-muted); }
 @media (min-width: 40rem) { .quote-drawer { padding: 2.25rem; } }
 @media (min-width: 48rem) { .zoom-stage { height: auto; aspect-ratio: 1; } }
 
