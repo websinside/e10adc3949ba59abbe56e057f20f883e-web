@@ -76,6 +76,9 @@ const productDialog = document.querySelector('#product-dialog');
 const zoomStage = document.querySelector('#zoom-stage');
 const zoomButton = document.querySelector('#toggle-zoom');
 const productDescriptions = {
+"Buzo completo El Roto Chileno": "Chaqueta azul marino con diseño rojo en V y pantalón con franjas rojas. Uniforme para estudiantes de la Escuela El Roto Chileno de Talagante. Consulta por tu talla y confección a medida.",
+"Polera El Roto Chileno": "Polera roja con cuello azul marino e insignia de El Roto Chileno. Uniforme para estudiantes de la Escuela El Roto Chileno de Talagante. Consulta por tu talla y confección a medida.",
+"Polerón El Roto Chileno": "Polerón rojo con capucha, cierre y terminaciones azul marino. Uniforme para estudiantes de la Escuela El Roto Chileno de Talagante. Consulta por tu talla y confección a medida.",
   'Polera Colegio Calera de Tango': 'Polera amarilla del Colegio Calera de Tango, con cuello y puños azul marino, botones oscuros e insignia del establecimiento. Consulta por la confección a medida, las tallas y los detalles de tu pedido.',
   'Buzo completo': 'Buzo completo para estudiantes del Colegio San Ignacio de Calera de Tango. Chaqueta con cierre en azul marino, rojo y gris, junto a pantalón azul marino con detalles rojos, según el modelo del catálogo. Lo confeccionamos a medida para acompañar con comodidad toda la jornada escolar.',
   'Polera blanca': 'Polera blanca del uniforme del Colegio San Ignacio de Calera de Tango, con cuello y detalles rojos y azul marino según el modelo del catálogo. Una prenda pensada para el uso diario, confeccionada según las medidas de cada estudiante.',
@@ -95,8 +98,9 @@ function resetZoom() {
 document.querySelectorAll('[data-view-product]').forEach(button => button.addEventListener('click', () => {
   viewedProduct = button.dataset.viewProduct;
   const isCalera = viewedProduct === 'Polera Colegio Calera de Tango';
-  document.querySelector('#product-school').textContent = isCalera ? 'Colegio Calera de Tango' : 'San Ignacio · Calera de Tango';
-  document.querySelector('#product-school-description').textContent = isCalera ? 'Para estudiantes del Colegio Calera de Tango.' : 'Para estudiantes del Colegio San Ignacio de Calera de Tango.';
+  const isRoto = viewedProduct.includes('El Roto Chileno');
+  document.querySelector('#product-school').textContent = isRoto ? 'Escuela El Roto Chileno · Talagante' : isCalera ? 'Colegio Calera de Tango' : 'San Ignacio · Calera de Tango';
+  document.querySelector('#product-school-description').textContent = isRoto ? 'Para estudiantes de la Escuela El Roto Chileno de Talagante.' : isCalera ? 'Para estudiantes del Colegio Calera de Tango.' : 'Para estudiantes del Colegio San Ignacio de Calera de Tango.';
   const image = button.closest('article').querySelector('.product-visual img').cloneNode(true);
   image.querySelectorAll('[id]').forEach(node => {
     const oldId = node.id;

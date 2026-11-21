@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="https://nathycostura.cl/assets/uniformes-nathy-chica.webp">
     <link rel="icon" href="assets/logo-icono.webp" type="image/png">
     <link rel="apple-touch-icon" href="assets/logo-icono.webp">
-    <link rel="preload" href="assets/modelo-calera-fondo-v2.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="assets/roto-chileno-modelo.webp" as="image" fetchpriority="high">
     <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
@@ -263,6 +263,7 @@
             </span>
             <div id="hero-carousel" class="hero-carousel" role="region" aria-roledescription="carrusel" aria-label="Uniformes escolares a medida" tabindex="0">
               <div class="slide-track" id="model-track">
+                <img src="assets/roto-chileno-modelo.webp" width="1774" height="887" class="slide-photo" data-school="Escuela El Roto Chileno · Talagante" alt="Estudiante usando el buzo de El Roto Chileno de Talagante" draggable="false">
                 <img width="1774" height="887" src="assets/modelo-calera-fondo-v2.webp" class="slide-photo" data-school="Colegio Calera de Tango" alt="Estudiante usando la polera amarilla del Colegio Calera de Tango" fetchpriority="high" draggable="false">
                 <img width="1774" height="887" src="assets/modelo-infantil-fondo-v3.webp" data-school="Colegio San Ignacio" class="slide-photo" alt="Imagen ilustrativa de un niño de primaria usando el buzo completo de San Ignacio" draggable="false">
                 <img width="1774" height="887" src="assets/modelo-femenino-fondo-v3.webp" data-school="Colegio San Ignacio" class="slide-photo" alt="Uniforme del Colegio San Ignacio de Calera de Tango, vista 2" draggable="false">
@@ -277,9 +278,10 @@
                 <button type="button" class="slide-dot" data-slide="1" aria-label="Mostrar imagen 2" aria-pressed="false"><span aria-hidden="true"></span></button>
                 <button type="button" class="slide-dot" data-slide="2" aria-label="Mostrar imagen 3" aria-pressed="false"><span aria-hidden="true"></span></button>
                 <button type="button" class="slide-dot" data-slide="3" aria-label="Mostrar imagen 4" aria-pressed="false"><span aria-hidden="true"></span></button>
+                <button type="button" class="slide-dot" data-slide="4" aria-label="Mostrar imagen 5" aria-pressed="false"><span aria-hidden="true"></span></button>
                 <button type="button" class="slide-arrow" id="next-slide" aria-label="Imagen siguiente"><i data-lucide="chevron-right" class="w-5 h-5" aria-hidden="true"></i></button>
               </div>
-              <span id="model-status" class="sr-only" aria-live="polite">Imagen 1 de 4.</span>
+              <span id="model-status" class="sr-only" aria-live="polite">Imagen 1 de 5.</span>
             </figcaption>
           </figure>
         </section>
@@ -386,10 +388,10 @@
               <span>Catálogo Escolar</span>
             </p>
             <h2 id="uniformes-title" class="text-3xl sm:text-5xl mt-2">Uniformes por colegio</h2>
-            <p class="text-muted mt-3 max-w-[58ch]">Uniformes del Colegio San Ignacio y del Colegio Calera de Tango. Elige la prenda y consulta por tu talla o confección a medida.</p>
+            <p class="text-muted mt-3 max-w-[58ch]">Uniformes del Colegio San Ignacio, Colegio Calera de Tango y Escuela El Roto Chileno de Talagante. Elige la prenda y consulta por tu talla o confección a medida.</p>
           </div>
           <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar confecciones">
-            <button type="button" class="filter" data-filter="todos" aria-pressed="true">Todos (6)</button>
+            <button type="button" class="filter" data-filter="todos" aria-pressed="true">Todos (9)</button>
             <button type="button" class="filter" data-filter="buzos" aria-pressed="false">Buzos y polerones</button>
             <button type="button" class="filter" data-filter="poleras" aria-pressed="false">Poleras</button>
             <button type="button" class="filter" data-filter="gorros" aria-pressed="false">Gorros</button>
@@ -528,6 +530,69 @@
               </button>
               <button type="button" data-view-product="Polera Colegio Calera de Tango" aria-haspopup="dialog" aria-controls="product-dialog" class="btn btn-outline btn-sm px-3"
                 aria-label="Ver detalles de Polera Colegio Calera de Tango">
+                <i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+<article class="product min-w-0" data-category="buzos">
+            <button type="button" class="product-visual block" data-view-product="Buzo completo El Roto Chileno" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Buzo completo El Roto Chileno">
+              <img width="1254" height="1254" src="assets/roto-chileno-buzo.webp" alt="Polera amarilla del Escuela El Roto Chileno · Talagante" loading="lazy">
+              <span class="product-zoom-hint" aria-hidden="true"><i data-lucide="zoom-in" class="w-4 h-4"></i></span>
+            </button>
+            <span class="product-tag">Escuela El Roto Chileno · Talagante</span>
+            <h3 class="text-xl mt-1">
+              <button type="button" data-view-product="Buzo completo El Roto Chileno" aria-haspopup="dialog" aria-controls="product-dialog" class="text-left hover:text-gold transition-colors">Buzo completo El Roto Chileno</button>
+            </h3>
+            <p class="text-sm text-muted mt-1 flex-1">Chaqueta con diseño rojo en V y pantalón azul marino.</p>
+            <div class="flex items-center gap-2 mt-4 pt-3 border-t border-rule">
+              <button type="button" data-open-quote data-product="Buzo completo El Roto Chileno" aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="btn btn-soft btn-sm flex-1">
+                <i data-lucide="message-circle" class="w-4 h-4" aria-hidden="true"></i>
+                <span>Cotizar</span>
+              </button>
+              <button type="button" data-view-product="Buzo completo El Roto Chileno" aria-haspopup="dialog" aria-controls="product-dialog" class="btn btn-outline btn-sm px-3"
+                aria-label="Ver detalles de Buzo completo El Roto Chileno">
+                <i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+<article class="product min-w-0" data-category="poleras">
+            <button type="button" class="product-visual block" data-view-product="Polera El Roto Chileno" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Polera El Roto Chileno">
+              <img width="1122" height="1402" src="assets/roto-chileno-polera.webp" alt="Polera amarilla del Escuela El Roto Chileno · Talagante" loading="lazy">
+              <span class="product-zoom-hint" aria-hidden="true"><i data-lucide="zoom-in" class="w-4 h-4"></i></span>
+            </button>
+            <span class="product-tag">Escuela El Roto Chileno · Talagante</span>
+            <h3 class="text-xl mt-1">
+              <button type="button" data-view-product="Polera El Roto Chileno" aria-haspopup="dialog" aria-controls="product-dialog" class="text-left hover:text-gold transition-colors">Polera El Roto Chileno</button>
+            </h3>
+            <p class="text-sm text-muted mt-1 flex-1">Polera roja con cuello azul marino e insignia escolar.</p>
+            <div class="flex items-center gap-2 mt-4 pt-3 border-t border-rule">
+              <button type="button" data-open-quote data-product="Polera El Roto Chileno" aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="btn btn-soft btn-sm flex-1">
+                <i data-lucide="message-circle" class="w-4 h-4" aria-hidden="true"></i>
+                <span>Cotizar</span>
+              </button>
+              <button type="button" data-view-product="Polera El Roto Chileno" aria-haspopup="dialog" aria-controls="product-dialog" class="btn btn-outline btn-sm px-3"
+                aria-label="Ver detalles de Polera El Roto Chileno">
+                <i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+<article class="product min-w-0" data-category="buzos">
+            <button type="button" class="product-visual block" data-view-product="Polerón El Roto Chileno" aria-haspopup="dialog" aria-controls="product-dialog" aria-label="Ver detalles de Polerón El Roto Chileno">
+              <img width="1122" height="1402" src="assets/roto-chileno-poleron.webp" alt="Polera amarilla del Escuela El Roto Chileno · Talagante" loading="lazy">
+              <span class="product-zoom-hint" aria-hidden="true"><i data-lucide="zoom-in" class="w-4 h-4"></i></span>
+            </button>
+            <span class="product-tag">Escuela El Roto Chileno · Talagante</span>
+            <h3 class="text-xl mt-1">
+              <button type="button" data-view-product="Polerón El Roto Chileno" aria-haspopup="dialog" aria-controls="product-dialog" class="text-left hover:text-gold transition-colors">Polerón El Roto Chileno</button>
+            </h3>
+            <p class="text-sm text-muted mt-1 flex-1">Polerón rojo con capucha y cierre, con detalles azul marino.</p>
+            <div class="flex items-center gap-2 mt-4 pt-3 border-t border-rule">
+              <button type="button" data-open-quote data-product="Polerón El Roto Chileno" aria-haspopup="dialog" aria-controls="quote-drawer" aria-expanded="false" class="btn btn-soft btn-sm flex-1">
+                <i data-lucide="message-circle" class="w-4 h-4" aria-hidden="true"></i>
+                <span>Cotizar</span>
+              </button>
+              <button type="button" data-view-product="Polerón El Roto Chileno" aria-haspopup="dialog" aria-controls="product-dialog" class="btn btn-outline btn-sm px-3"
+                aria-label="Ver detalles de Polerón El Roto Chileno">
                 <i data-lucide="eye" class="w-4 h-4" aria-hidden="true"></i>
               </button>
             </div>
