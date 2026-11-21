@@ -91,8 +91,8 @@ const productDescriptions = {
 let viewedProduct = '';
 function resetZoom() {
   zoomStage.classList.remove('is-zoomed');
-  zoomButton.setAttribute('aria-pressed', 'false');
-  zoomButton.textContent = 'Ampliar imagen';
+  zoomButton?.setAttribute('aria-pressed', 'false');
+  if(zoomButton) zoomButton.textContent = 'Ampliar imagen';
   document.querySelector('#zoom-help').textContent = 'Mira los detalles de la prenda.';
   zoomStage.scrollTop = 0;
   zoomStage.scrollLeft = 0;
@@ -120,10 +120,10 @@ document.querySelectorAll('[data-view-product]').forEach(button => button.addEve
   productDialog.showModal();
   document.documentElement.classList.add('drawer-open');
 }));
-zoomButton.addEventListener('click', () => {
+zoomButton?.addEventListener('click', () => {
   const zoomed = zoomStage.classList.toggle('is-zoomed');
-  zoomButton.setAttribute('aria-pressed', String(zoomed));
-  zoomButton.textContent = zoomed ? 'Ver imagen completa' : 'Ampliar imagen';
+  zoomButton?.setAttribute('aria-pressed', String(zoomed));
+  if(zoomButton) zoomButton.textContent = zoomed ? 'Ver imagen completa' : 'Ampliar imagen';
   document.querySelector('#zoom-help').textContent = zoomed ? 'Desplaza la imagen para ver sus detalles.' : 'Mira los detalles de la prenda.';
   if (!zoomed) { zoomStage.scrollTop = 0; zoomStage.scrollLeft = 0; }
 });
@@ -238,3 +238,36 @@ async function turnProduct() {
 turnButton.addEventListener('click',turnProduct);
 productImageBox.addEventListener('click',turnProduct);
 productImageBox.addEventListener('keydown',event=>{if(backSource && (event.key==='Enter'||event.key===' ')){event.preventDefault();turnProduct();}});
+
+// Mobile-only views; desktop retains the complete page.
+const mobileLayout = window.matchMedia('(max-width: 47.999rem)');
+const mobileScreenButtons = [...document.querySelectorAll('.mobile-bottom-nav [data-mobile-screen]')];
+function setMobileScreen(screen, scroll = true) {
+  document.body.dataset.mobileView = screen;
+  mobileScreenButtons.forEach(button => {
+    if(button.dataset.mobileScreen === screen) button.setAttribute('aria-current','page');
+    else button.removeAttribute('aria-current');
+  });
+  if(scroll) window.scrollTo({top:0,behavior:'instant'});
+}
+mobileScreenButtons.forEach(button => button.addEventListener('click',()=>setMobileScreen(button.dataset.mobileScreen)));
+document.addEventListener('click',event=>{
+  if(!mobileLayout.matches) return;
+  const link=event.target.closest('a[href^="#"]');
+  if(!link) return;
+  const hash=link.getAttribute('href');
+  const target=hash.length>1 ? document.getElementById(hash.slice(1)) : document.getElementById('contenido');
+  if(!target) return;
+  const panel=target.closest('[data-mobile-panel]');
+  const screen=panel ? panel.dataset.mobilePanel : 'inicio';
+  setMobileScreen(screen,false);
+});
+function syncMobileHash() {
+  if(!mobileLayout.matches) return;
+  const target=document.getElementById(location.hash.slice(1));
+  const panel=target?.closest('[data-mobile-panel]');
+  if(panel) setMobileScreen(panel.dataset.mobilePanel,false);
+}
+window.addEventListener('hashchange',syncMobileHash);
+mobileLayout.addEventListener('change',syncMobileHash);
+syncMobileHash();

@@ -887,3 +887,23 @@
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+.mobile-bottom-nav { display:none; }
+@media (max-width:47.999rem) {
+  body { padding-bottom:calc(76px + env(safe-area-inset-bottom)); }
+  body[data-mobile-view="inicio"] [data-mobile-panel="colegios"],
+  body[data-mobile-view="colegios"] [data-mobile-panel="inicio"] { display:none; }
+  .mobile-bottom-nav { position:fixed; inset:auto 0 0; z-index:60; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); padding:8px 8px calc(8px + env(safe-area-inset-bottom)); border-top:1px solid var(--store-rule); background:var(--store-paper); box-shadow:0 -4px 20px rgba(37,20,34,.06); }
+  .mobile-bottom-nav button,.mobile-bottom-nav a { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; min-height:56px; border-radius:12px; font-size:12px; font-weight:800; color:var(--store-muted); white-space:nowrap; }
+  .mobile-bottom-nav svg { width:23px; height:23px; }
+  .mobile-bottom-nav [aria-current="page"] { background:var(--store-accent-soft); color:var(--store-accent); }
+  .mobile-bottom-nav a { color:var(--store-whatsapp); }
+  .whatsapp-float { display:none; }
+  #products { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
+  #products .product { padding:.6rem; }
+  #products .product h3 { font-size:1rem; }
+  #products .product-tag { font-size:.6875rem; }
+  #products .product .btn { min-width:0; padding:.5rem; font-size:.75rem; }
+  #products .product [data-open-quote] svg { display:none; }
+  #products .product-visual { padding:.25rem; }
+}
